@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Sing : MonoBehaviour
 {
+    AudioSource audioSource;
+
+    [SerializeField] GameObject image;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        image.SetActive(false);
     }
 
     // Update is called once per frame
@@ -15,4 +19,17 @@ public class Sing : MonoBehaviour
     {
         
     }
+
+    public void StartSinging()
+    {
+        audioSource.Play();
+
+        Debug.Log("singing");
+    }
+
+    public void ShowImage()
+    {
+        image.SetActive(true);
+    }
+
 }
