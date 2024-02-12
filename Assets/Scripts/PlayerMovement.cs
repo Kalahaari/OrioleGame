@@ -78,7 +78,8 @@ public class PlayerMovement : MonoBehaviour
                 ms.anim.Play("Run");
                 ms.TrailsOff();
                 rb.AddForce(movementValue * moveSpeed, ForceMode.Force);
-                //Debug.Log(rb.velocity);
+                //Debug.Log("velocity is " + rb.velocity);
+                //Debug.Log("addforce is " + movementValue * moveSpeed);
                 //rb.velocity = new Vector3(movementValue.x * moveSpeed, rb.velocity.y, movementValue.z * moveSpeed);
 
                 break;
@@ -123,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movementValue = new Vector3(context.ReadValue<Vector2>().x, 0, context.ReadValue<Vector2>().y);
         //Debug.Log(movementValue);
-        //movementValue = Quaternion.Euler(0, cam.gameObject.transform.eulerAngles.y, 0) * movementValue;
+        movementValue = Quaternion.Euler(0, cam.gameObject.transform.eulerAngles.y, 0) * movementValue;
     }
 
     public void OnJump(InputAction.CallbackContext context)
