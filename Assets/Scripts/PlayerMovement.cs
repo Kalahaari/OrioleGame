@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
                 ChangeDrag(groundDrag);
                 ms.anim.Play("Run");
                 ms.TrailsOff();
-                rb.AddForce(movementValue * moveSpeed, ForceMode.Force);
+                //rb.AddForce(movementValue * moveSpeed, ForceMode.Force);
                 //Debug.Log("velocity is " + rb.velocity);
                 //Debug.Log("addforce is " + movementValue * moveSpeed);
                 //rb.velocity = new Vector3(movementValue.x * moveSpeed, rb.velocity.y, movementValue.z * moveSpeed);
@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
                 ChangeDrag(airDrag);
                 ms.anim.Play("Fly");
                 ms.TrailsOn();
-                rb.AddForce(movementValue * glideSpeed, ForceMode.Force);
+                //rb.AddForce(movementValue * glideSpeed, ForceMode.Force);
                 break;
         }
 
@@ -111,6 +111,19 @@ public class PlayerMovement : MonoBehaviour
         if (FlyHeld)
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        switch (state)
+        {
+            case State.Run:
+                rb.AddForce(movementValue * moveSpeed, ForceMode.Force);
+                break;
+            case State.Fly:
+                rb.AddForce(movementValue * glideSpeed, ForceMode.Force);
+                break;
         }
     }
 
