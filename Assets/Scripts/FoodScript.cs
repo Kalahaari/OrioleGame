@@ -13,11 +13,16 @@ public class FoodScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.LogError("cat");
+        
+    }
+
+    public void PickUp()
+    {
+        Debug.Log("Picked Up Food Item");
     }
 
     public void Eat()
     {
-        Debug.Log("eating");
+        Debug.Log("Ate Food");
     }
 }

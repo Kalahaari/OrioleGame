@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     bool dragLocked;
 
     bool FlyHeld;
+
+    private GameObject heldFood = null; //food is not held at start
     private enum State
     {
         Run,
@@ -71,6 +73,20 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Detect if 'E' is pressed
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Attempt to pick up food
+            PickupFood();
+        }
+
+        // Detect if 'F' is pressed
+        if (Input.GetKeyDown(KeyCode.F) && heldFood != null)
+        {
+            // Eat the food
+            EatFood();
+        }
+
         switch (state)
         {
             case State.Run:
@@ -112,6 +128,20 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
         }
+    }
+
+    void PickupFood()
+    {
+        // Implement logic to pick up food
+        GetComponent<FoodScript>().PickUp();
+    }
+
+    void EatFood()
+    {
+        // Call the Eat method on the food script
+        heldFood.GetComponent<FoodScript>().Eat();
+        Destroy(heldFood);
+        heldFood = null;
     }
 
     private void FixedUpdate()
