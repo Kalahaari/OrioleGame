@@ -5987,7 +5987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44295558, y: 0.021006119, z: -0.010382047, w: 0.8962373}
+  m_LocalRotation: {x: 0.44295558, y: 0.021006096, z: -0.010382036, w: 0.8962373}
   m_LocalPosition: {x: -16.431803, y: 25.5, z: -15.204544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7956,8 +7956,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 846551002}
-        m_TargetAssemblyTypeName: CaterpillarScript, Assembly-CSharp
-        m_MethodName: Eat
+        m_TargetAssemblyTypeName: FoodScript, Assembly-CSharp
+        m_MethodName: PickUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9640,7 +9640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191175403}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44295558, y: 0.021006119, z: -0.010382047, w: 0.8962373}
+  m_LocalRotation: {x: 0.44295558, y: 0.021006096, z: -0.010382036, w: 0.8962373}
   m_LocalPosition: {x: -16.431803, y: 25.5, z: -15.204544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -133,7 +133,8 @@ public class PlayerMovement : MonoBehaviour
     void PickupFood()
     {
         // Implement logic to pick up food
-        GetComponent<FoodScript>().PickUp();
+        heldFood.GetComponent<FoodScript>().PickUp();
+        //position food in birds mouth so it looks like its holding it
     }
 
     void EatFood()

@@ -24,5 +24,7 @@ public class FoodScript : MonoBehaviour
     public void Eat()
     {
         Debug.Log("Ate Food");
+        //add to hunger bar
+        //destroy food object
     }
 }
