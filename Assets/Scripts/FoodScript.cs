@@ -18,16 +18,13 @@ public class FoodScript : MonoBehaviour
         
     }
 
-    public void PickUp()
-    {
-        Debug.Log("Picked Up Food Item");
-    }
-
+    
+    //called when in range of the food and presses F
     public void Eat()
     {
         Debug.Log("Ate Food");
         //add to hunger bar
-        //destroy food object
+        Destroy(this.gameObject);
         pd.ChangeEnergy(5);
     }
 }

@@ -9,8 +9,10 @@ public class CanBePickedUp : MonoBehaviour
     
     public void PickUp()
     {
-        //Debug.Log("Invoked");
+        //move to have player hold item//stick to player
+        //make held item = true
 
+        Debug.Log("Item picked up");
         PickUpEvent?.Invoke();
     }
 }
