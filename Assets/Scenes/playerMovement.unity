@@ -591,41 +591,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1360097617}
-    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
-        type: 3}
-      propertyPath: flapDrag
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
-        type: 3}
-      propertyPath: jumpForce
-      value: 800
-      objectReference: {fileID: 0}
-    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
-        type: 3}
-      propertyPath: turnSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
-        type: 3}
-      propertyPath: turnRadius
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
-        type: 3}
-      propertyPath: gravityMultiplier
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
-        type: 3}
-      propertyPath: glideGravityMultiplier
-      value: 0.07
-      objectReference: {fileID: 0}
     - target: {fileID: 1080923961378237270, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -634,7 +599,7 @@ PrefabInstance:
     - target: {fileID: 1080923961378237270, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.903
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 1080923961378237270, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
         type: 3}
@@ -675,11 +640,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2896312234178879965, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
-        type: 3}
-      propertyPath: m_Interpolate
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7144739088005723626, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
         type: 3}

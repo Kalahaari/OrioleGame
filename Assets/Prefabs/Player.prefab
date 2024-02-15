@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 5501946252013904877}
   rotateSpeed: 8
+  turnRotationAmount: 0
   wing1: {fileID: 5694458950796823398}
   wing2: {fileID: 4388483098143151740}
 --- !u!95 &5501946252013904877
@@ -622,17 +623,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d148e81728481c4d95c5f4f30d9db9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 40
   groundDrag: 4
   airDrag: 1
-  jumpForce: 1
-  gravityMultiplier: 0.07
+  flapDrag: 3
+  jumpForce: 800
+  gravityMultiplier: 0.5
+  glideGravityMultiplier: 0.07
   glideSpeed: 2
-  model: {fileID: 852334474820574623}
+  groundCheckRadius: 1
+  turnSpeed: 4
+  turnRadius: 35
+  rotateSpeed: 4
   airborne: 0
   groundCheck: {fileID: 3389266260035869889}
-  groundCheckRadius: 1
   cam: {fileID: 0}
+  model: {fileID: 852334474820574623}
 --- !u!54 &2896312234178879965
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -657,7 +663,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &8467641031250927358

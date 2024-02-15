@@ -19,9 +19,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float groundCheckRadius;
     [SerializeField] float turnSpeed;
     [SerializeField] float turnRadius;
+    [SerializeField] float rotateSpeed;
     public bool airborne;
     bool dragLocked;
-    bool FlyHeld;
     Vector3 movementValue;
     #endregion
 
@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
         if (!airborne) state = State.Run;
 
         Gravity(state == State.Glide);
-        Debug.Log(state);
+        //Debug.Log(state);
     }
 
     private void FixedUpdate()
@@ -170,12 +170,15 @@ public class PlayerMovement : MonoBehaviour
         ms.anim.Play("Glide");
         ms.TrailsOn();
         turnRadius = (movementValue.x > 0) ? turnRadius : -turnRadius;
+        //ms.TurnFlight(turnRadius > 0);
     }
 
     void Run()
     {
-        //RotateMovementToCamera();
-        ms.Rotate(movementValue);
+        RotateMovementToCamera();
+        //ms.Rotate(movementValue);
+        rb.MoveRotation(Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
+        RotatePlayer();
 
         ChangeDrag(groundDrag);
         ms.anim.Play("Run");
@@ -190,7 +193,12 @@ public class PlayerMovement : MonoBehaviour
         ChangeDrag(flapDrag);
     }
 
-
+    void RotatePlayer()
+    {
+        if (movementValue.magnitude == 0) { return; }
+        var rotation = Quaternion.LookRotation(movementValue);
+        rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed));
+    }
     /*
     switch the running code so that instead of leaving the character unrotated and just rotating the model, we are actually rotating the model of the character, because when you jump and start flying, it needs to happen in the same rotation that you already had. 
     */
