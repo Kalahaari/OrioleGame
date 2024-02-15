@@ -29,7 +29,13 @@ public class Sing : MonoBehaviour
 
     public void ShowImage()
     {
-        image.SetActive(true);
-    }
+        if (image.activeSelf == false)
+            image.SetActive(true);
+        else if (image.activeSelf == true)
+            image.SetActive(false);
+        
+
+
+    } 
 
 }
