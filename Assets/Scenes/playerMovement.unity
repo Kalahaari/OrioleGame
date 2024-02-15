@@ -433,13 +433,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360097615}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.33899778, y: -0.21502733, z: 0.08018644, w: 0.9123672}
-  m_LocalPosition: {x: 11.599214, y: 19.625612, z: -22.378624}
+  m_LocalRotation: {x: 0.34835115, y: -0.00012158868, z: 0.00032717807, w: 0.9373641}
+  m_LocalPosition: {x: -1.41, y: 19.625612, z: -22.378624}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40.773, y: 0, z: 0.04}
 --- !u!114 &1360097619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,6 +581,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 472786450734476404, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
+        type: 3}
+      propertyPath: turnRotationAmount
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
         type: 3}
       propertyPath: cam
@@ -588,8 +593,38 @@ PrefabInstance:
       objectReference: {fileID: 1360097617}
     - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
         type: 3}
+      propertyPath: flapDrag
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
+        type: 3}
+      propertyPath: jumpForce
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
+        type: 3}
       propertyPath: moveSpeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
+        type: 3}
+      propertyPath: turnSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
+        type: 3}
+      propertyPath: turnRadius
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
+        type: 3}
+      propertyPath: gravityMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
+        type: 3}
+      propertyPath: glideGravityMultiplier
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 1080923961378237270, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
         type: 3}

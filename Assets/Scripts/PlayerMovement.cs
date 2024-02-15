@@ -5,144 +5,86 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    float moveSpeed;
+    #region Movement Variables
+    [Header("Movement Variables")] 
 
-    [SerializeField]
-    float groundDrag;
-
-    [SerializeField]
-    float airDrag;
-
-    [SerializeField]
-    float jumpForce;
-
-    [SerializeField]
-    float gravityMultiplier;
-
-    [SerializeField]
-    float glideSpeed;
-
-    [SerializeField]
-    GameObject model;
-
-    Rigidbody rb;
-    modelScript ms;
-
+    [SerializeField] float moveSpeed;
+    [SerializeField] float groundDrag;
+    [SerializeField] float airDrag;
+    [SerializeField] float flapDrag;
+    [SerializeField] float jumpForce;
+    [SerializeField] float gravityMultiplier;
+    [SerializeField] float glideGravityMultiplier;
+    [SerializeField] float glideSpeed;
+    [SerializeField] float groundCheckRadius;
+    [SerializeField] float turnSpeed;
+    [SerializeField] float turnRadius;
+    public bool airborne;
     bool dragLocked;
-
     bool FlyHeld;
+    Vector3 movementValue;
+    #endregion
 
-    private GameObject heldFood = null; //food is not held at start
+    [Header("References")]
+    [SerializeField] GameObject groundCheck;
+    [SerializeField] Camera cam;
+    Rigidbody rb;
+
+    #region Model
+    [SerializeField] GameObject model;
+    modelScript ms;
+    #endregion
+
+    #region State Machine Declarations
     private enum State
     {
         Run,
-        Fly,
+        Glide,
+        Flap,
     }
 
     private State state;
-
-    Vector3 movementValue;
-
-    public bool airborne;
-
-    [SerializeField]
-    GameObject groundCheck;
-
-    [SerializeField]
-    float groundCheckRadius;
-
-    [SerializeField]
-    Camera cam;
+    #endregion
 
     LayerMask groundMask;
 
     // Start is called before the first frame update
     void Start()
     {
-        state = State.Run;
+        ms = model.GetComponent<modelScript>();
         rb = GetComponent<Rigidbody>();
-
-        dragLocked = false;
         groundMask = LayerMask.GetMask("ground");
 
-        ms = model.GetComponent<modelScript>();
-
+        dragLocked = false;
+        state = State.Run;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Detect if 'E' is pressed
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            // Attempt to pick up food
-            PickupFood();
-        }
-
-        // Detect if 'F' is pressed
-        if (Input.GetKeyDown(KeyCode.F) && heldFood != null)
-        {
-            // Eat the food
-            EatFood();
-        }
-
+        #region State Machine
         switch (state)
         {
             case State.Run:
-                ChangeDrag(groundDrag);
-                ms.anim.Play("Run");
-                ms.TrailsOff();
-                //rb.AddForce(movementValue * moveSpeed, ForceMode.Force);
-                //Debug.Log("velocity is " + rb.velocity);
-                //Debug.Log("addforce is " + movementValue * moveSpeed);
-                //rb.velocity = new Vector3(movementValue.x * moveSpeed, rb.velocity.y, movementValue.z * moveSpeed);
-
+                Run();
                 break;
-            case State.Fly:
-                ChangeDrag(airDrag);
-                ms.anim.Play("Fly");
-                ms.TrailsOn();
-                //rb.AddForce(movementValue * glideSpeed, ForceMode.Force);
+
+            case State.Glide:
+                Glide();
+                break;
+
+            case State.Flap:
+                Flap();
                 break;
         }
+        #endregion
 
-        airborne = true;
+        GroundCheck();
 
-        Collider[] colliders = Physics.OverlapSphere(groundCheck.transform.position, groundCheckRadius, groundMask);
+        if (!airborne) state = State.Run;
 
-        if (colliders.Length > 0)
-        {
-            airborne = false;
-            state = State.Run;
-        } else
-        {
-            state = State.Fly;
-        }
-
-        Gravity();
-
-        ms.Rotate(movementValue);
-
-        if (FlyHeld)
-        {
-            rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
-        }
-    }
-
-    void PickupFood()
-    {
-        // Implement logic to pick up food
-        heldFood.GetComponent<FoodScript>().PickUp();
-        //position food in birds mouth so it looks like its holding it
-    }
-
-    void EatFood()
-    {
-        // Call the Eat method on the food script
-        heldFood.GetComponent<FoodScript>().Eat();
-        Destroy(heldFood);
-        heldFood = null;
+        Gravity(state == State.Glide);
+        Debug.Log(state);
     }
 
     private void FixedUpdate()
@@ -152,49 +94,47 @@ public class PlayerMovement : MonoBehaviour
             case State.Run:
                 rb.AddForce(movementValue * moveSpeed, ForceMode.Force);
                 break;
-            case State.Fly:
-                rb.AddForce(movementValue * glideSpeed, ForceMode.Force);
+            case State.Glide:
+                rb.AddForce(transform.forward * glideSpeed, ForceMode.Force);
+                if(movementValue.x > 0)
+                {
+                    rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x + turnRadius, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z), turnSpeed));
+                }
+                break;
+
+            case State.Flap:
+                rb.AddForce(movementValue * moveSpeed, ForceMode.Force);
                 break;
         }
     }
 
-    /*public void OnMove(InputValue value)
-    {
-        movementValue = new Vector3(value.Get<Vector2>().x, 0, value.Get<Vector2>().y);
-        movementValue = Quaternion.Euler(0, cam.gameObject.transform.eulerAngles.y, 0) * movementValue;
-    }*/
-
     public void OnMove(InputAction.CallbackContext context)
     {
         movementValue = new Vector3(context.ReadValue<Vector2>().x, 0, context.ReadValue<Vector2>().y);
-        //Debug.Log(movementValue);
-        movementValue = Quaternion.Euler(0, cam.gameObject.transform.eulerAngles.y, 0) * movementValue;
+
+        if (airborne)
+        {
+            if(movementValue.z > 0)
+            {
+                state = State.Glide;
+            }
+            else
+            {
+                state = State.Flap;
+            }
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        //Debug.Log("fly");
         if (context.performed)
         {
-            FlyHeld = true;
-            
-        } else if (context.canceled)
-        {
-            FlyHeld = false;
-        }
-        
-        
-        //Debug.Log("jump");
-        /*if (!airborne)
-        {
-            rb.position += new Vector3(0, 0);
-
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(transform.up * jumpForce);
-        }*/
-        
+        }
     }
 
+    #region Physics Methods
     void ChangeDrag(float data)
     {
         if (!dragLocked)
@@ -203,29 +143,55 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-    void Gravity()
+    void Gravity(bool gliding)
     {
-        rb.AddForce(Physics.gravity * gravityMultiplier, ForceMode.Acceleration);
-        //Debug.Log(Physics.gravity * gravityMultiplier);
+        rb.AddForce(Physics.gravity * (gliding ? glideGravityMultiplier : gravityMultiplier), ForceMode.Acceleration);
     }
-
-    public void OnInteract(InputAction.CallbackContext context)
+    void GroundCheck()
     {
-        
-        if (context.performed)
+        airborne = true;
+
+        Collider[] colliders = Physics.OverlapSphere(groundCheck.transform.position, groundCheckRadius, groundMask);
+
+        if (colliders.Length > 0)
         {
-            Debug.Log("test");
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1);
-            foreach (Collider col in hitColliders)
-            {
-                if (col.gameObject.CompareTag("Interactable"))
-                {
-                    //Debug.Log("caterpilar");
-                    col.gameObject.GetComponent<Interactable>().Interact();
-                }
-            }
+            airborne = false;
         }
-
-        
     }
+    void RotateMovementToCamera()
+    {
+        movementValue = Quaternion.Euler(0, cam.gameObject.transform.eulerAngles.y, 0) * movementValue;
+    }
+    #endregion
+
+    void Glide()
+    {
+        ChangeDrag(airDrag);
+        ms.anim.Play("Glide");
+        ms.TrailsOn();
+        turnRadius = (movementValue.x > 0) ? turnRadius : -turnRadius;
+    }
+
+    void Run()
+    {
+        //RotateMovementToCamera();
+        ms.Rotate(movementValue);
+
+        ChangeDrag(groundDrag);
+        ms.anim.Play("Run");
+        ms.TrailsOff();
+    }
+
+    void Flap()
+    {
+        RotateMovementToCamera();
+        ms.Rotate(movementValue);
+        ms.TrailsOff();
+        ChangeDrag(flapDrag);
+    }
+
+
+    /*
+    switch the running code so that instead of leaving the character unrotated and just rotating the model, we are actually rotating the model of the character, because when you jump and start flying, it needs to happen in the same rotation that you already had. 
+    */
 }

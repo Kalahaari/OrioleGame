@@ -562,6 +562,7 @@ GameObject:
   - component: {fileID: 678088989511755511}
   - component: {fileID: 2896312234178879965}
   - component: {fileID: 8467641031250927358}
+  - component: {fileID: 1192978697102885837}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -777,8 +778,28 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c5cb181f-d52d-4529-8044-016b6bb55bc4
     m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1808043f-c186-44f5-ac71-5f2d48795ae9
+    m_ActionName: Player/PickUp
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 29b28d2e-8a0b-4f8b-a240-7e754c650e33
+    m_ActionName: Player/Eat
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1192978697102885837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7144739088005723626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52a31351222034449fbc214fc5c68c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

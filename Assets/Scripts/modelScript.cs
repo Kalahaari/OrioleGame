@@ -10,6 +10,9 @@ public class modelScript : MonoBehaviour
     float rotateSpeed;
 
     [SerializeField]
+    float turnRotationAmount;
+
+    [SerializeField]
     GameObject wing1, wing2;
 
     // Start is called before the first frame update
@@ -40,5 +43,10 @@ public class modelScript : MonoBehaviour
     {
         wing1.GetComponent<TrailRenderer>().emitting = false;
         wing2.GetComponent<TrailRenderer>().emitting = false;
+    }
+
+    public void TurnFlight(bool rightTurn)
+    {
+        transform.Rotate(transform.forward, rightTurn ? turnRotationAmount : -turnRotationAmount);
     }
 }
