@@ -175,7 +175,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Run()
     {
-        RotateMovementToCamera();
+        //RotateMovementToCamera();
         //ms.Rotate(movementValue);
         rb.MoveRotation(Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
         RotatePlayer();
@@ -187,7 +187,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Flap()
     {
-        RotateMovementToCamera();
+        //RotateMovementToCamera();
         ms.Rotate(movementValue);
         ms.TrailsOff();
         ChangeDrag(flapDrag);
