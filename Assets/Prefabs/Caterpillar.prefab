@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4329011799822935500}
   - component: {fileID: 1891663967886050882}
   - component: {fileID: 1808509592472981198}
+  - component: {fileID: 3713753841802146431}
   - component: {fileID: 7399767959242160194}
   - component: {fileID: 528585014243150879}
   - component: {fileID: 8889314493808125806}
@@ -108,6 +109,33 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3713753841802146431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8222959755480758114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4fafa537a1a80459c6819cdfea29b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PickUpEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 528585014243150879}
+        m_TargetAssemblyTypeName: FoodScript, Assembly-CSharp
+        m_MethodName: PickUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7399767959242160194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,12 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27013fb191a26d44a59c2b7e19778d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractEvent:
+  EatEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 528585014243150879}
         m_TargetAssemblyTypeName: FoodScript, Assembly-CSharp
-        m_MethodName: PickUp
+        m_MethodName: Eat
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -147,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6414aaee846c74284a44fabd92d955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pd: {fileID: 11400000, guid: 77fab0ed6be934645ae35ccfd8299f65, type: 2}
 --- !u!54 &8889314493808125806
 Rigidbody:
   m_ObjectHideFlags: 0

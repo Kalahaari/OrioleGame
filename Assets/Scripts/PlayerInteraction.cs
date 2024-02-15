@@ -15,7 +15,7 @@ public class PlayerInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Detect if 'E' is pressed
+        /*// Detect if 'E' is pressed
         if (Input.GetKeyDown(KeyCode.E))
         {
             // Attempt to pick up food
@@ -27,7 +27,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             // Eat the food
             EatFood();
-        }
+        }*/
     }
 
     void PickupFood()
@@ -45,23 +45,40 @@ public class PlayerInteraction : MonoBehaviour
         heldFood = null;
     }
 
-    public void OnInteract(InputAction.CallbackContext context)
+    public void OnFeed(InputAction.CallbackContext context)
     {
 
         if (context.performed)
         {
-            Debug.Log("test");
+            Debug.Log("feed");
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1);
             foreach (Collider col in hitColliders)
             {
                 if (col.gameObject.CompareTag("Interactable"))
                 {
                     //Debug.Log("caterpilar");
-                    col.gameObject.GetComponent<Interactable>().Interact();
+                    col.gameObject.GetComponent<Edible>().Eat();
                 }
             }
         }
+    }
 
+    public void OnPickup(InputAction.CallbackContext context)
+    {
+
+        if (context.performed)
+        {
+            Debug.Log("pickup");
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1);
+            foreach (Collider col in hitColliders)
+            {
+                if (col.gameObject.CompareTag("Interactable"))
+                {
+                    //Debug.Log("caterpilar");
+                    col.gameObject.GetComponent<CanBePickedUp>().PickUp();
+                }
+            }
+        }
 
     }
 }

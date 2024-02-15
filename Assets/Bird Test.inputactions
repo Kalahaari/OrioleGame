@@ -33,15 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Interact",
-                    "type": "Button",
-                    "id": "c5cb181f-d52d-4529-8044-016b6bb55bc4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "PickUp",
                     "type": "Button",
                     "id": "1808043f-c186-44f5-ac71-5f2d48795ae9",
@@ -239,19 +230,8 @@
                 },
                 {
                     "name": "",
-                    "id": "a71ea62e-bcee-4380-b0f2-d9bc400ab62e",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "0ad42a22-9a32-49f4-91ea-30ecb5354808",
-                    "path": "E",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -262,7 +242,7 @@
                 {
                     "name": "",
                     "id": "3458ccaa-4118-4884-ac48-f153ff4237ce",
-                    "path": "F",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

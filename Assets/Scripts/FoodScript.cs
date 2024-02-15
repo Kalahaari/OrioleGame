@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FoodScript : MonoBehaviour
 {
+    [SerializeField] PlayerData pd;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +28,6 @@ public class FoodScript : MonoBehaviour
         Debug.Log("Ate Food");
         //add to hunger bar
         //destroy food object
+        pd.ChangeEnergy(5);
     }
 }
