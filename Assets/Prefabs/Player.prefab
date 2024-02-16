@@ -630,11 +630,11 @@ MonoBehaviour:
   jumpForce: 800
   gravityMultiplier: 0.5
   glideGravityMultiplier: 0.07
-  glideSpeed: 2
+  glideSpeed: 14
   groundCheckRadius: 1
   turnSpeed: 4
-  turnRadius: 35
-  rotateSpeed: 4
+  turnRadiusAmount: 3
+  rotateSpeed: 10
   airborne: 0
   groundCheck: {fileID: 3389266260035869889}
   cam: {fileID: 0}

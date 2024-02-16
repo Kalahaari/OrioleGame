@@ -18,10 +18,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float glideSpeed;
     [SerializeField] float groundCheckRadius;
     [SerializeField] float turnSpeed;
-    [SerializeField] float turnRadius;
+    [SerializeField] float turnRadiusAmount;
     [SerializeField] float rotateSpeed;
     public bool airborne;
     bool dragLocked;
+    bool glideHeld;
+    float turnRadius;
     Vector3 movementValue;
     #endregion
 
@@ -81,10 +83,27 @@ public class PlayerMovement : MonoBehaviour
 
         GroundCheck();
 
-        if (!airborne) state = State.Run;
+        glideHeld = (movementValue.z > 0) ? true : false;
+        
+
+        if (airborne)
+        {
+            if (glideHeld)
+            {
+                state = State.Glide;
+            }
+            else
+            {
+                state = State.Flap;
+            }
+        } else
+        {
+                state = State.Run;
+        }
 
         Gravity(state == State.Glide);
         //Debug.Log(state);
+        //Debug.Log(movementValue);
     }
 
     private void FixedUpdate()
@@ -96,14 +115,13 @@ public class PlayerMovement : MonoBehaviour
                 break;
             case State.Glide:
                 rb.AddForce(transform.forward * glideSpeed, ForceMode.Force);
-                if(movementValue.x > 0)
-                {
-                    rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x + turnRadius, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z), turnSpeed));
-                }
+                
+                rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + turnRadius, transform.rotation.eulerAngles.z), turnSpeed));
+                
                 break;
 
             case State.Flap:
-                rb.AddForce(movementValue * moveSpeed, ForceMode.Force);
+                //rb.AddForce(movementValue * moveSpeed, ForceMode.Force);
                 break;
         }
     }
@@ -112,17 +130,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movementValue = new Vector3(context.ReadValue<Vector2>().x, 0, context.ReadValue<Vector2>().y);
 
-        if (airborne)
-        {
-            if(movementValue.z > 0)
-            {
-                state = State.Glide;
-            }
-            else
-            {
-                state = State.Flap;
-            }
-        }
+        
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -170,6 +178,23 @@ public class PlayerMovement : MonoBehaviour
         ms.anim.Play("Glide");
         ms.TrailsOn();
         turnRadius = (movementValue.x > 0) ? turnRadius : -turnRadius;
+
+        if(movementValue.x > 0)
+        {
+            turnRadius = turnRadiusAmount;
+            ms.TurnFlight(-1);
+        } else if(movementValue.x < 0)
+        {
+            turnRadius = -turnRadiusAmount;
+            ms.TurnFlight(1);
+        } else
+        {
+            turnRadius = 0;
+            ms.TurnFlight(0);
+        }
+        
+        Debug.Log(turnRadius);
+        
         //ms.TurnFlight(turnRadius > 0);
     }
 
@@ -188,7 +213,7 @@ public class PlayerMovement : MonoBehaviour
     void Flap()
     {
         //RotateMovementToCamera();
-        ms.Rotate(movementValue);
+        //ms.Rotate(movementValue);
         ms.TrailsOff();
         ChangeDrag(flapDrag);
     }
