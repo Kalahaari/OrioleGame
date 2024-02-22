@@ -5,21 +5,19 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public GameObject heldFood = null; //food is not held at start
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
+    public GameObject heldFood = null; // Reference to the currently held food item
+    public Transform mouthPosition; // Assign this in the inspector to the player's mouth transform
 
     //this function just calls the eat funtiction
+
+    void Update()
+    {
+        // Check if 'E' is pressed and a food item is held
+        if (Input.GetKeyDown(KeyCode.E) && heldFood != null)
+        {
+            DropHeldItem();
+        }
+    }
     public void OnFeed(InputAction.CallbackContext context)
     {
 
@@ -40,7 +38,6 @@ public class PlayerInteraction : MonoBehaviour
     //this function just calls the pickup funtiction
     public void OnPickup(InputAction.CallbackContext context)
     {
-
         if (context.performed)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1);
@@ -48,10 +45,44 @@ public class PlayerInteraction : MonoBehaviour
             {
                 if (col.gameObject.CompareTag("Interactable"))
                 {
-                    col.gameObject.GetComponent<CanBePickedUp>().PickUp();
+                    GameObject item = col.gameObject;
+                    CanBePickedUp pickUpComponent = item.GetComponent<CanBePickedUp>();
+                    if (pickUpComponent != null)
+                    {
+                        pickUpComponent.PickUp();
+                        if (heldFood != null)
+                        {
+                            // If already holding an item, drop it or destroy it
+                            // Implement drop or destroy logic here
+                        }
+                        heldFood = item;
+                        // Parent the item to the mouth position and reset its local position and rotation
+                        item.transform.SetParent(mouthPosition);
+                        item.transform.localPosition = Vector3.zero;
+                        item.transform.localRotation = Quaternion.identity;
+                    }
                 }
             }
         }
+    }
 
+    void DropHeldItem()
+    {
+        if (heldFood != null)
+        {
+            // Detach the item from the player
+            heldFood.transform.SetParent(null);
+
+            // Optionally apply some physics to simulate dropping
+            Rigidbody itemRigidbody = heldFood.GetComponent<Rigidbody>();
+            if (itemRigidbody != null)
+            {
+                itemRigidbody.isKinematic = false; // Make sure the Rigidbody is not kinematic
+                itemRigidbody.AddForce(transform.forward * 5, ForceMode.Impulse); // Apply a forward force
+            }
+
+            // Clear the reference to the held item
+            heldFood = null;
+        }
     }
 }
