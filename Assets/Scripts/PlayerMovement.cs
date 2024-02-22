@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -32,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject groundCheck;
     [SerializeField] Camera cam;
     [SerializeField] PlayerData pd;
-    [SerializeField] TextMeshProUGUI energyPlaceholder;
     AudioSource audioSource;
     Rigidbody rb;
 
@@ -116,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
 
         Gravity(state == State.Glide);
 
-        energyPlaceholder.text = ("Energy: " + pd.playerEnergy);
+        //energyPlaceholder.text = ("Energy: " + pd.playerEnergy);
     }
 
     private void FixedUpdate()
