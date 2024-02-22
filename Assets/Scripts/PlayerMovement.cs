@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Camera cam;
     [SerializeField] PlayerData pd;
     [SerializeField] TextMeshProUGUI energyPlaceholder;
+    AudioSource audioSource;
     Rigidbody rb;
 
     [Header("Energy Variables")]
@@ -63,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
     {
         ms = model.GetComponent<modelScript>();
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
         groundMask = LayerMask.GetMask("ground");
 
         dragLocked = false;
@@ -151,6 +153,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(transform.up * jumpForce);
             pd.ChangeEnergy(-flapEnergy);
+            audioSource.Play();
             //Debug.Log(pd.playerEnergy);
         }
     }
