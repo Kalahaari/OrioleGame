@@ -591,11 +591,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1360097617}
-    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
-        type: 3}
-      propertyPath: rotateSpeed
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 1080923961378237270, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
         type: 3}
       propertyPath: m_LocalPosition.x

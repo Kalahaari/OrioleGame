@@ -10,7 +10,7 @@ public class modelScript : MonoBehaviour
     float rotateSpeed;
 
     [SerializeField]
-    float turnRotationAmount;
+    float tiltAmount;
 
     [SerializeField]
     GameObject wing1, wing2;
@@ -43,6 +43,6 @@ public class modelScript : MonoBehaviour
     
     public void TurnFlight(int data)
     {
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, turnRotationAmount * data);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, tiltAmount * data);
     }
 }

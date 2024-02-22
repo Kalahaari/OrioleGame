@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 5501946252013904877}
   rotateSpeed: 8
-  turnRotationAmount: 0
+  tiltAmount: 30
   wing1: {fileID: 5694458950796823398}
   wing2: {fileID: 4388483098143151740}
 --- !u!95 &5501946252013904877
@@ -633,8 +633,8 @@ MonoBehaviour:
   glideSpeed: 14
   groundCheckRadius: 1
   turnSpeed: 4
-  turnRadiusAmount: 3
-  rotateSpeed: 10
+  turnRadiusAmount: 2
+  rotateSpeed: 7
   airborne: 0
   groundCheck: {fileID: 3389266260035869889}
   cam: {fileID: 0}
@@ -817,3 +817,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52a31351222034449fbc214fc5c68c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heldFood: {fileID: 0}
