@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -30,7 +31,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     [SerializeField] GameObject groundCheck;
     [SerializeField] Camera cam;
+    [SerializeField] PlayerData pd;
+    [SerializeField] TextMeshProUGUI energyPlaceholder;
     Rigidbody rb;
+
+    [Header("Energy Variables")]
+    [SerializeField] int flapEnergy;
+    [SerializeField] float EnergyDecreaseInterval;
+    [SerializeField] int EnergyDecreaseAmount;
 
     #region Model
     [SerializeField] GameObject model;
@@ -59,6 +67,9 @@ public class PlayerMovement : MonoBehaviour
 
         dragLocked = false;
         state = State.Run;
+
+        pd.SetEnergy(100);
+        StartCoroutine(EnergyCoroutine());
     }
 
     // Update is called once per frame
@@ -102,8 +113,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Gravity(state == State.Glide);
-        //Debug.Log(state);
-        //Debug.Log(movementValue);
+
+        energyPlaceholder.text = ("Energy: " + pd.playerEnergy);
     }
 
     private void FixedUpdate()
@@ -139,6 +150,8 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(transform.up * jumpForce);
+            pd.ChangeEnergy(-flapEnergy);
+            //Debug.Log(pd.playerEnergy);
         }
     }
 
@@ -193,7 +206,7 @@ public class PlayerMovement : MonoBehaviour
             ms.TurnFlight(0);
         }
         
-        Debug.Log(turnRadius);
+        //Debug.Log(turnRadius);
         
         //ms.TurnFlight(turnRadius > 0);
     }
@@ -214,6 +227,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //RotateMovementToCamera();
         //ms.Rotate(movementValue);
+        
         ms.TrailsOff();
         ChangeDrag(flapDrag);
     }
@@ -224,7 +238,14 @@ public class PlayerMovement : MonoBehaviour
         var rotation = Quaternion.LookRotation(movementValue);
         rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed));
     }
-    /*
-    switch the running code so that instead of leaving the character unrotated and just rotating the model, we are actually rotating the model of the character, because when you jump and start flying, it needs to happen in the same rotation that you already had. 
-    */
+
+    IEnumerator EnergyCoroutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(EnergyDecreaseInterval);
+            pd.ChangeEnergy(-EnergyDecreaseAmount);
+            //Debug.Log(pd.playerEnergy);
+        }
+    }
 }

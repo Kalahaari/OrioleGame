@@ -627,7 +627,7 @@ MonoBehaviour:
   groundDrag: 4
   airDrag: 1
   flapDrag: 3
-  jumpForce: 800
+  jumpForce: 500
   gravityMultiplier: 0.5
   glideGravityMultiplier: 0.07
   glideSpeed: 14
@@ -638,6 +638,10 @@ MonoBehaviour:
   airborne: 0
   groundCheck: {fileID: 3389266260035869889}
   cam: {fileID: 0}
+  pd: {fileID: 11400000, guid: 77fab0ed6be934645ae35ccfd8299f65, type: 2}
+  flapEnergy: 5
+  EnergyDecreaseInterval: 1
+  EnergyDecreaseAmount: 1
   model: {fileID: 852334474820574623}
 --- !u!54 &2896312234178879965
 Rigidbody:
@@ -818,3 +822,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heldFood: {fileID: 0}
+  mouthPosition: {fileID: 0}
