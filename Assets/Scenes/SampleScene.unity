@@ -5987,7 +5987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44295558, y: 0.021006096, z: -0.010382036, w: 0.8962373}
+  m_LocalRotation: {x: 0.44295558, y: 0.021006119, z: -0.010382047, w: 0.8962373}
   m_LocalPosition: {x: -16.431803, y: 25.5, z: -15.204544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9576,7 +9576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191175403}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44295558, y: 0.021006096, z: -0.010382036, w: 0.8962373}
+  m_LocalRotation: {x: 0.44295558, y: 0.021006119, z: -0.010382047, w: 0.8962373}
   m_LocalPosition: {x: -16.431803, y: 25.5, z: -15.204544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12507,6 +12507,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
+        type: 3}
+      propertyPath: EnergyDecreaseInterval
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1080923961378237270, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
         type: 3}
       propertyPath: m_LocalPosition.x
