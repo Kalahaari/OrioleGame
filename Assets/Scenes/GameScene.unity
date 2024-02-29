@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028353, g: 0.22571383, b: 0.30692253, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6182,7 +6182,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.117599055, y: 0.023259718, z: -0.0027552, w: 0.9927849}
+  m_LocalRotation: {x: 0.11759905, y: 0.023259709, z: -0.002755199, w: 0.9927849}
   m_LocalPosition: {x: -16.478262, y: 6.1, z: -16.202854}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10532,7 +10532,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191175403}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.117599055, y: 0.023259718, z: -0.0027552, w: 0.9927849}
+  m_LocalRotation: {x: 0.11759905, y: 0.023259709, z: -0.002755199, w: 0.9927849}
   m_LocalPosition: {x: -16.478262, y: 6.1, z: -16.202854}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12032,7 +12032,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 217069176}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: QuitMenu
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
