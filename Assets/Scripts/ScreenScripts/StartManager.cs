@@ -16,4 +16,4 @@ public class StartManager : MonoBehaviour
         Debug.Log("QUIT!");
         Application.Quit();
     }
-}
+} 

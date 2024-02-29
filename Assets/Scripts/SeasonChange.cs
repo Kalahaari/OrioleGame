@@ -13,13 +13,13 @@ When season changes,
 
 2 = Nest
 
-3 = eat enough to fill expanded energy bar
-
 -2D art on Buildings changes
 
 -Materials on Trees changes
 
-sound effect(?) changes
+music, sound effect(?) changes
+lighting, sun location changes
+hook sounds
 */
 
 public class SeasonChange : MonoBehaviour
