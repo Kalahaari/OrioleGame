@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     #region Movement Variables
-    [Header("Movement Variables")] 
+    [Header("Movement Variables")]
 
     [SerializeField] float moveSpeed;
     [SerializeField] float groundDrag;
@@ -72,9 +72,10 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(EnergyCoroutine());
     }
 
-    // Update is called once per frame
     void Update()
     {
+        Debug.Log(movementValue);
+
         #region State Machine
         switch (state)
         {
@@ -94,8 +95,9 @@ public class PlayerMovement : MonoBehaviour
 
         GroundCheck();
 
-        glideHeld = (movementValue.z > 0) ? true : false;
-        
+        //glideHeld = (movementValue.z > 0) ? true : false;
+        glideHeld = true;
+
 
         if (airborne)
         {
@@ -107,16 +109,16 @@ public class PlayerMovement : MonoBehaviour
             {
                 state = State.Flap;
             }
-        } else
+        }
+        else
         {
-                state = State.Run;
+            state = State.Run;
         }
 
         Gravity(state == State.Glide);
 
-        //energyPlaceholder.text = ("Energy: " + pd.playerEnergy);
     }
-
+    //test
     private void FixedUpdate()
     {
         switch (state)
@@ -126,13 +128,13 @@ public class PlayerMovement : MonoBehaviour
                 break;
             case State.Glide:
                 rb.AddForce(transform.forward * glideSpeed, ForceMode.Force);
-                
-                rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + turnRadius, transform.rotation.eulerAngles.z), turnSpeed));
-                
+
+                //turn towards movementvalue, but slowly
+                //rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + turnRadius, transform.rotation.eulerAngles.z), turnSpeed));
+                //rb.MoveRotation(Quaternion.RotateTowards());
                 break;
 
             case State.Flap:
-                //rb.AddForce(movementValue * moveSpeed, ForceMode.Force);
                 break;
         }
     }
@@ -140,8 +142,7 @@ public class PlayerMovement : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         movementValue = new Vector3(context.ReadValue<Vector2>().x, 0, context.ReadValue<Vector2>().y);
-
-        
+        RotateMovementToCamera();
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -152,7 +153,6 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(transform.up * jumpForce);
             pd.ChangeEnergy(-flapEnergy);
             audioSource.Play();
-            //Debug.Log(pd.playerEnergy);
         }
     }
 
@@ -182,7 +182,10 @@ public class PlayerMovement : MonoBehaviour
     }
     void RotateMovementToCamera()
     {
+        //Debug.Log(movementValue);
         movementValue = Quaternion.Euler(0, cam.gameObject.transform.eulerAngles.y, 0) * movementValue;
+
+        //Debug.Log(cam.gameObject.transform.eulerAngles.y);
     }
     #endregion
 
@@ -191,9 +194,10 @@ public class PlayerMovement : MonoBehaviour
         ChangeDrag(airDrag);
         ms.anim.Play("Glide");
         ms.TrailsOn();
-        turnRadius = (movementValue.x > 0) ? turnRadius : -turnRadius;
+        RotatePlayer();
+        //turnRadius = (movementValue.x > 0) ? turnRadius : -turnRadius;
 
-        if(movementValue.x > 0)
+        /*if(movementValue.x > 0)
         {
             turnRadius = turnRadiusAmount;
             ms.TurnFlight(-1);
@@ -205,10 +209,10 @@ public class PlayerMovement : MonoBehaviour
         {
             turnRadius = 0;
             ms.TurnFlight(0);
-        }
-        
+        }*/
+
         //Debug.Log(turnRadius);
-        
+
         //ms.TurnFlight(turnRadius > 0);
     }
 
@@ -216,7 +220,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //RotateMovementToCamera();
         //ms.Rotate(movementValue);
-        rb.MoveRotation(Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
+        //rb.MoveRotation(Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
         RotatePlayer();
 
         ChangeDrag(groundDrag);
@@ -228,7 +232,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //RotateMovementToCamera();
         //ms.Rotate(movementValue);
-        
+
         ms.TrailsOff();
         ChangeDrag(flapDrag);
     }
