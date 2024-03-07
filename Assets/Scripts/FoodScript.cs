@@ -5,11 +5,11 @@ using UnityEngine;
 public class FoodScript : MonoBehaviour
 {
     [SerializeField] PlayerData pd;
-
+    BoxCollider boxCollider;
     // Start is called before the first frame update
     void Start()
     {
-
+        boxCollider = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -18,7 +18,11 @@ public class FoodScript : MonoBehaviour
         
     }
 
-    
+    public void Hold()
+    {
+        Debug.Log("picked up");
+        boxCollider.enabled = false;
+    }
     //called when in range of the food and presses F
     public void Eat()
     {
