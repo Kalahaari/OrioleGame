@@ -30,6 +30,7 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     //Debug.Log("caterpilar");
                     col.gameObject.GetComponent<Edible>().Eat();
+                    //play cruchingeattingnoise.wav
                 }
             }
         }
