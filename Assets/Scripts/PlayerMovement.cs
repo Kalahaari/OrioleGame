@@ -95,8 +95,8 @@ public class PlayerMovement : MonoBehaviour
 
         GroundCheck();
 
-        //glideHeld = (movementValue.z > 0) ? true : false;
-        glideHeld = true;
+        glideHeld = (movementValue != Vector3.zero) ? true : false;
+        //glideHeld = true;
 
 
         if (airborne)
@@ -182,10 +182,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void RotateMovementToCamera()
     {
-        //Debug.Log(movementValue);
         movementValue = Quaternion.Euler(0, cam.gameObject.transform.eulerAngles.y, 0) * movementValue;
-
-        //Debug.Log(cam.gameObject.transform.eulerAngles.y);
     }
     #endregion
 
@@ -218,8 +215,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Run()
     {
-        //RotateMovementToCamera();
-        //ms.Rotate(movementValue);
         //rb.MoveRotation(Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
         RotatePlayer();
 
@@ -250,7 +245,6 @@ public class PlayerMovement : MonoBehaviour
         {
             yield return new WaitForSeconds(EnergyDecreaseInterval);
             pd.ChangeEnergy(-EnergyDecreaseAmount);
-            //Debug.Log(pd.playerEnergy);
         }
     }
 }
