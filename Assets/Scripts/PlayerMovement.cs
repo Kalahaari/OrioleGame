@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(movementValue);
+        //Debug.Log(movementValue);
 
         #region State Machine
         switch (state)
