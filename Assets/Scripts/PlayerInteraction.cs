@@ -5,17 +5,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public GameObject heldFood = null; // Reference to the currently held food item
-    public Transform mouthPosition; // Assign this in the inspector to the player's mouth transform
+    private GameObject heldFood; // Reference to the currently held food item
+    [SerializeField] GameObject mouthPosition; // Assign this in the inspector to the player's mouth transform
 
-    //this function just calls the eat funtiction
 
     void Update()
     {
-        // Check if 'E' is pressed and a food item is held
         if (Input.GetKeyDown(KeyCode.E) && heldFood != null)
         {
-            DropHeldItem();
+            //DropHeldItem();
         }
     }
     public void OnFeed(InputAction.CallbackContext context)
@@ -41,26 +39,46 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (context.performed)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1);
-            foreach (Collider col in hitColliders)
+            if (heldFood)
             {
-                if (col.gameObject.CompareTag("Interactable"))
+                heldFood.transform.SetParent(null);
+                heldFood = null;
+            }
+            else
+            {
+                Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1);
+                foreach (Collider col in hitColliders)
                 {
-                    GameObject item = col.gameObject;
-                    CanBePickedUp pickUpComponent = item.GetComponent<CanBePickedUp>();
-                    if (pickUpComponent != null)
+                    if (col.gameObject.CompareTag("Interactable"))
                     {
-                        pickUpComponent.PickUp();
-                        if (heldFood != null)
+                        heldFood = col.gameObject;
+                        heldFood.transform.SetParent(mouthPosition.transform);
+                        heldFood.transform.localPosition = Vector3.zero;
+                        heldFood.transform.localRotation = Quaternion.identity;
+
+                        //col.gameObject.transform.SetParent(mouthPosition.transform);
+                        //col.transform.localPosition = Vector3.zero;
+                        //col.transform.localRotation = Quaternion.identity;
+
+
+
+                        /*GameObject item = col.gameObject;
+                        CanBePickedUp pickUpComponent = item.GetComponent<CanBePickedUp>();
+                        if (pickUpComponent != null)
                         {
-                            // If already holding an item, drop it or destroy it
-                            // Implement drop or destroy logic here
-                        }
-                        heldFood = item;
-                        // Parent the item to the mouth position and reset its local position and rotation
-                        item.transform.SetParent(mouthPosition);
-                        item.transform.localPosition = Vector3.zero;
-                        item.transform.localRotation = Quaternion.identity;
+                            pickUpComponent.PickUp();
+                            if (heldFood != null)
+                            {
+                                // If already holding an item, drop it or destroy it
+                                // Implement drop or destroy logic here
+                            }
+                            heldFood = item;
+                            // Parent the item to the mouth position and reset its local position and rotation
+                            item.transform.SetParent(mouthPosition);
+                            item.transform.localPosition = Vector3.zero;
+                            item.transform.localRotation = Quaternion.identity;
+                        }*/
+
                     }
                 }
             }
