@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthBarScript : MonoBehaviour
 {
@@ -22,5 +23,9 @@ public class HealthBarScript : MonoBehaviour
     void Update()
     {
         EnergyBar.value = pd.playerEnergy / 100f;
+        if(pd.playerEnergy <= 0)
+        {
+            SceneManager.LoadScene("DeathScreen");
+        }
     }
 }
