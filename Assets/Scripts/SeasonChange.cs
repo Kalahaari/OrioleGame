@@ -27,16 +27,26 @@ public class SeasonChange : MonoBehaviour
     [SerializeField] int SeasonTimerMax;
     int SeasonTimer;
     [SerializeField] Material[] material;
+    Material[] tempArray;
     private Renderer rend;
+    [SerializeField] Material barkMat;
     [SerializeField] int x = 0;
 
+
+    
     void Awake()
     {
+        updateArray(material[0]);
         SeasonTimer = SeasonTimerMax;
         rend = GetComponent<Renderer>();
         rend.enabled = true;
-        rend.sharedMaterial = material[0];
+        rend.materials = tempArray;
         StartCoroutine(CountDown());
+    }
+
+    void updateArray(Material data)
+    {
+        tempArray = new Material[] {barkMat, data};
     }
 
 
@@ -52,7 +62,9 @@ public class SeasonChange : MonoBehaviour
         {
             if(SeasonTimer == 0)
             {
-                rend.sharedMaterial = material[x + 1];
+                //rend.sharedMaterial = material[x + 1];
+                updateArray(material[x + 1]);
+                rend.materials = tempArray;
                 x++;
                 SeasonTimer = SeasonTimerMax;
             }
