@@ -661,14 +661,15 @@ MonoBehaviour:
   airDrag: 1
   flapDrag: 3
   jumpForce: 500
-  gravityMultiplier: 0.5
-  glideGravityMultiplier: 0.13
+  gravityMultiplier: 3
+  glideGravityMultiplier: 0.3
   glideSpeed: 14
   groundCheckRadius: 1
   turnSpeed: 4
   turnRadiusAmount: 2
   rotateSpeed: 7
   airborne: 0
+  glideHeld: 0
   groundCheck: {fileID: 3389266260035869889}
   cam: {fileID: 0}
   pd: {fileID: 11400000, guid: 77fab0ed6be934645ae35ccfd8299f65, type: 2}
@@ -854,7 +855,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52a31351222034449fbc214fc5c68c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldFood: {fileID: 0}
   mouthPosition: {fileID: 2253881147010337740}
 --- !u!82 &381662906606012008
 AudioSource:

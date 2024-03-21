@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float rotateSpeed;
     public bool airborne;
     bool dragLocked;
-    bool glideHeld;
+    public bool glideHeld;
     float turnRadius;
     Vector3 movementValue;
     #endregion
@@ -95,7 +95,14 @@ public class PlayerMovement : MonoBehaviour
 
         GroundCheck();
 
-        glideHeld = (movementValue != Vector3.zero) ? true : false;
+        //glideHeld = (movementValue != Vector3.zero) ? true : false;
+        if(movementValue != Vector3.zero)
+        {
+            glideHeld = true;
+        } else
+        {
+            glideHeld = false;
+        }
         //glideHeld = true;
 
 
@@ -115,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
             state = State.Run;
         }
 
-        Gravity(state == State.Glide);
+        Gravity(glideHeld);
 
     }
     //test

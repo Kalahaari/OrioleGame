@@ -25,7 +25,7 @@ public class HealthBarScript : MonoBehaviour
         EnergyBar.value = pd.playerEnergy / 100f;
         if(pd.playerEnergy <= 0)
         {
-            SceneManager.LoadScene("DeathScreen");
+            SceneManager.LoadScene(3);
         }
     }
 }
