@@ -759,8 +759,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.54}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 225, y: 115}
-  m_SizeDelta: {x: 206.031, y: 50}
+  m_AnchoredPosition: {x: 84.3, y: 105.2}
+  m_SizeDelta: {x: 555.32, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1094813724418473624
 MonoBehaviour:
@@ -796,7 +796,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.999979, y: -0.12579007}
+  m_AnchoredPosition: {x: 24.999979, y: -105.3}
   m_SizeDelta: {x: 232.4, y: 77.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2385436550126832505
@@ -858,7 +858,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mayday! Mayday!
+  m_text: 'Oh, Ori you pushed yourself too far...
+
+    if only you''d eaten more
+    caterpillars. Ever since Ori''s gone, we''ve seen a lot less orioles around.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
