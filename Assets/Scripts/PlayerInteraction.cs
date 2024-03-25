@@ -11,14 +11,10 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && heldFood != null)
-        {
-            //DropHeldItem();
-        }
+        
     }
     public void OnFeed(InputAction.CallbackContext context)
     {
-
         if (context.performed)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1);
@@ -40,8 +36,10 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (heldFood)
             {
+                heldFood.GetComponent<CanBePickedUp>().Drop();
                 heldFood.transform.SetParent(null);
                 heldFood = null;
+                
             }
             else
             {
@@ -54,6 +52,8 @@ public class PlayerInteraction : MonoBehaviour
                         heldFood.transform.SetParent(mouthPosition.transform);
                         heldFood.transform.localPosition = Vector3.zero;
                         heldFood.transform.localRotation = Quaternion.identity;
+
+                        heldFood.gameObject.GetComponent<CanBePickedUp>().PickUp();
 
                         //col.gameObject.transform.SetParent(mouthPosition.transform);
                         //col.transform.localPosition = Vector3.zero;

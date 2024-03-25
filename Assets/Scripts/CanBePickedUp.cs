@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class CanBePickedUp : MonoBehaviour
 {
     public UnityEvent PickUpEvent;
+    public UnityEvent DropEvent;
     
     public void PickUp()
     {
@@ -14,5 +15,9 @@ public class CanBePickedUp : MonoBehaviour
 
         Debug.Log("Item picked up");
         PickUpEvent?.Invoke();
+    }
+    public void Drop()
+    {
+        DropEvent?.Invoke();
     }
 }

@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class FoodScript : MonoBehaviour
 {
+    
     [SerializeField] PlayerData pd;
     BoxCollider boxCollider;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         boxCollider = GetComponent<BoxCollider>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -22,6 +25,8 @@ public class FoodScript : MonoBehaviour
     {
         Debug.Log("picked up");
         boxCollider.enabled = false;
+        rb.isKinematic = true;
+        GetComponent<SpriteBillboard>().enabled = false;
     }
     //called when in range of the food and presses F
     public void Eat()
@@ -30,5 +35,12 @@ public class FoodScript : MonoBehaviour
         //add to hunger bar
         Destroy(this.gameObject);
         pd.ChangeEnergy(5);
+    }
+
+    public void Drop()
+    {
+        boxCollider.enabled = true;
+        rb.isKinematic = false;
+        GetComponent<SpriteBillboard>().enabled = true;
     }
 }
