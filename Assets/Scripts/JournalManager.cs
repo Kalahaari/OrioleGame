@@ -27,7 +27,14 @@ public class JournalManager : MonoBehaviour
         //if J is pressed Journal Menu Opens
         if (Input.GetKeyDown(KeyCode.J))
         {
-            OpenMainMenu();
+            if (MainMenu.activeSelf) // If main menu is active, close it
+            {
+                CloseCurrentPanel();
+            }
+            else
+            {
+                OpenMainMenu();
+            }
         }
     }
 
@@ -67,6 +74,20 @@ public class JournalManager : MonoBehaviour
     }
 
     public void OpenFood()
+    {
+        CloseCurrentPanel(); // Close the current panel, if any
+        Food.SetActive(true);
+        currentPanel = Food; // Update the current panel reference
+    }
+
+    public void OpenAboutOri()
+    {
+        CloseCurrentPanel(); // Close the current panel, if any
+        Food.SetActive(true);
+        currentPanel = Food; // Update the current panel reference
+    }
+
+    public void OpenAboutBlock()
     {
         CloseCurrentPanel(); // Close the current panel, if any
         Food.SetActive(true);
