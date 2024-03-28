@@ -95,6 +95,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ntreefinal2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d56925550c5bc544865427aa8e5a4e9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -102,7 +107,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d56925550c5bc544865427aa8e5a4e9,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2113845623919626530}
+      addedObject: {fileID: 2338255251648296995}
   m_SourcePrefab: {fileID: 100100000, guid: 9d56925550c5bc544865427aa8e5a4e9, type: 3}
 --- !u!4 &5854199015311323778 stripped
 Transform:
@@ -116,22 +121,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6247886321376810345}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2113845623919626530
-MonoBehaviour:
+--- !u!64 &2338255251648296995
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6518285705328912440}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1969fce51529413dbccd35261f2e42c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SeasonTimerMax: 3
-  material:
-  - {fileID: 2100000, guid: f2791e839202a95439e7bfbe7e95ae37, type: 2}
-  - {fileID: 2100000, guid: b1774684b3e980d49a2ce359c5061a33, type: 2}
-  - {fileID: 2100000, guid: 5abcbcacb1bcff84388e900421d31ee9, type: 2}
-  barkMat: {fileID: 0}
-  x: 0
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6099800089077584851, guid: 9d56925550c5bc544865427aa8e5a4e9, type: 3}
