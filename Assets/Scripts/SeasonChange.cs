@@ -2,53 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- * Whole Level = 10 minutes, Season = 10/3 min
-
-When season changes,
-
--Goal changes.
-
-1 = Mate
-
-2 = Nest
-
--2D art on Buildings changes
-
--Materials on Trees changes
-
-music, sound effect(?) changes
-lighting, sun location changes
-hook sounds
-*/
-
 public class SeasonChange : MonoBehaviour
 {
-    [SerializeField] int SeasonTimerMax;
     int SeasonTimer;
     [SerializeField] Material[] material;
     Material[] tempArray;
     private Renderer rend;
     [SerializeField] Material barkMat;
-    [SerializeField] int x = 0;
-
-
     
-    void Awake()
+    void Start()
     {
         updateArray(material[0]);
-        SeasonTimer = SeasonTimerMax;
+        //SeasonTimer = SeasonTimerMax;
         rend = GetComponent<Renderer>();
         rend.enabled = true;
         rend.materials = tempArray;
-        StartCoroutine(CountDown());
+        //StartCoroutine(CountDown());
     }
 
     void updateArray(Material data)
     {
-        tempArray = new Material[] {barkMat, data};
+        tempArray = new Material[] { data, barkMat};
+    }
+    
+    private void OnEnable()
+    {
+        SeasonManager.onSeasonChange += MaterialChange;
     }
 
+    private void OnDisable()
+    {
+        SeasonManager.onSeasonChange -= MaterialChange;
+    }
+
+    void MaterialChange()
+    {
+        updateArray(material[SeasonManager.instance.CurrentSeason - 1]);
+        rend.materials = tempArray;
+        Debug.Log("materialchange");
+    }
 
     void Update()
     {
@@ -56,7 +48,7 @@ public class SeasonChange : MonoBehaviour
     }
     //set limit for loop also set int
     //make sure the timer happens twice
-    private IEnumerator CountDown()
+    /*private IEnumerator CountDown()
     {
         while (true)
         {
@@ -79,5 +71,5 @@ public class SeasonChange : MonoBehaviour
                 break; 
             }
         }
-    }
+    }*/
 }
