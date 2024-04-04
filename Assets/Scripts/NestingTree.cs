@@ -10,7 +10,7 @@ public class NestingTree : MonoBehaviour
 
     GameObject LocalNestingUI;
 
-    public int NestCompletionAmount;
+    public float NestCompletionAmount;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,8 +42,8 @@ public class NestingTree : MonoBehaviour
         Debug.Log("exittree");
         if (other.gameObject.CompareTag("Player"))
         {
-            LocalNestingUI.SetActive(false);
-            NestIndicator.SetActive(false);
+            //LocalNestingUI.SetActive(false);
+            //NestIndicator.SetActive(false);
         }
     }
 }

@@ -24,7 +24,7 @@ public class NestScript : MonoBehaviour
         if (other.GetComponent<NestingMaterial>())
         {
             Destroy(other.gameObject);
-            treeScript.NestCompletionAmount += 25;
+            treeScript.NestCompletionAmount += 12.5f;
         }
     }
 }
