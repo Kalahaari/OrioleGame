@@ -23,7 +23,7 @@ public class PlayerInteraction : MonoBehaviour
                 if (col.gameObject.CompareTag("Interactable"))
                 {
                     //Debug.Log("caterpilar");
-                    col.gameObject.GetComponent<Edible>().Eat();
+                    col.gameObject.GetComponent<Edible>()?.Eat();
                 }
             }
         }
