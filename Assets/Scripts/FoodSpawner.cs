@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class FoodSpawner : MonoBehaviour
 {
-    public GameObject[] foodPrefabs; // Array of food prefabs
-    public float spawnInterval = 5f; // Time between each spawn
-    public Vector3 spawnAreaMin = new Vector3(-10, 0, -10); // Minimum spawn coordinates
-    public Vector3 spawnAreaMax = new Vector3(10, 0, 10); // Maximum spawn coordinates
+    [SerializeField] GameObject[] foodPrefabs; // Array of food prefabs
+    [SerializeField] float spawnInterval = 5f; // Time between each spawn
+
+    [SerializeField] float spawnAreaSize;
 
     private float timeSinceLastSpawn;
 
@@ -30,10 +30,10 @@ public class FoodSpawner : MonoBehaviour
         if (foodPrefabs.Length == 0) return; // Check if foodPrefabs array is empty
 
         // Generate a random position within the spawn area
-        float spawnX = Random.Range(spawnAreaMin.x, spawnAreaMax.x);
-        float spawnY = Random.Range(spawnAreaMin.y, spawnAreaMax.y);
-        float spawnZ = Random.Range(spawnAreaMin.z, spawnAreaMax.z);
-        Vector3 spawnPosition = new Vector3(spawnX, spawnY, spawnZ);
+        float spawnX = Random.Range(transform.position.x - spawnAreaSize, transform.position.x + spawnAreaSize);
+        float spawnY = Random.Range(transform.position.y - spawnAreaSize, transform.position.y + spawnAreaSize);
+        float spawnZ = Random.Range(transform.position.z - spawnAreaSize, transform.position.z + spawnAreaSize);
+        Vector3 spawnPosition = new Vector3(spawnX, transform.position.y, spawnZ);
 
         // Select a random food prefab
         int prefabIndex = Random.Range(0, foodPrefabs.Length);
