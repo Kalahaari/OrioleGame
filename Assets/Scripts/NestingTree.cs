@@ -29,19 +29,21 @@ public class NestingTree : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("entertree");
+        
         if (other.gameObject.CompareTag("Player"))
         {
             LocalNestingUI.SetActive(true);
             NestIndicator.SetActive(true);
+            Debug.Log("entertree");
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("exittree");
+        
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("exittree");
             //LocalNestingUI.SetActive(false);
             //NestIndicator.SetActive(false);
         }

@@ -20,4 +20,9 @@ public class CloseMe : MonoBehaviour
 
    }
 
+    public void ResumeTime()
+    {
+        Time.timeScale = 1;
+    }
+
 }

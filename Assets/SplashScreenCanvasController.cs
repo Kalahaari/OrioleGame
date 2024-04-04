@@ -23,7 +23,8 @@ public class SplashScreenCanvasController : MonoBehaviour
     void Start()
     {
         // Title Screen is on when scene loads
-        TitleScreen.SetActive(true);  // It is the last child of canvas, so will open on top of all other panels
+        //TitleScreen.SetActive(true);  // It is the last child of canvas, so will open on top of all other panels
+        Time.timeScale = 0;
 
         // GameIntroPanel is on when scene loads (behind Title)  
         GameIntro.SetActive(true);  // Level_1 intro opens when this panel is closed 

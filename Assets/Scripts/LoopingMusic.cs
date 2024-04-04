@@ -45,7 +45,7 @@ public class LoopingMusic : MonoBehaviour
     void Update()
     {
 
-        if (SeasonNumber == 1 && Season1Started == false)
+        if (SeasonManager.instance.CurrentSeason == 1 && Season1Started == false)
         {
             // Assign the listofClips according to the season number
             CurrentSeasonsClips = audioClips_1;
@@ -56,7 +56,7 @@ public class LoopingMusic : MonoBehaviour
             Season1Started = true;
         }
 
-        if (SeasonNumber == 2 && Season2Started == false)
+        if (SeasonManager.instance.CurrentSeason == 2 && Season2Started == false)
         {
             
             // Assign the listofClips according to the season number
@@ -67,7 +67,7 @@ public class LoopingMusic : MonoBehaviour
             Season2Started = true;
         }   
 
-        if (SeasonNumber == 3 && Season3Started == false)
+        if (SeasonManager.instance.CurrentSeason == 3 && Season3Started == false)
         {
             
             // Assign the listofClips according to the season number
