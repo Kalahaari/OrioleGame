@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pd: {fileID: 11400000, guid: 77fab0ed6be934645ae35ccfd8299f65, type: 2}
+  DeletionTime: 60
 --- !u!54 &8889314493808125806
 Rigidbody:
   m_ObjectHideFlags: 0

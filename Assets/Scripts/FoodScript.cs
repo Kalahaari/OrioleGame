@@ -6,6 +6,7 @@ public class FoodScript : MonoBehaviour
 {
     
     [SerializeField] PlayerData pd;
+    [SerializeField] float DeletionTime;
     BoxCollider boxCollider;
     Rigidbody rb;
     // Start is called before the first frame update
@@ -13,6 +14,7 @@ public class FoodScript : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider>();
         rb = GetComponent<Rigidbody>();
+        Destroy(gameObject, DeletionTime);
     }
 
     // Update is called once per frame
