@@ -158,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(transform.up * jumpForce);
-            pd.ChangeEnergy(-flapEnergy);
+            pd.ChangeEnergy(-flapEnergy / 2);
             audioSource.Play();
         }
     }

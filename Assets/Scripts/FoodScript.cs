@@ -34,7 +34,7 @@ public class FoodScript : MonoBehaviour
         Debug.Log("Ate Food");
         //add to hunger bar
         Destroy(this.gameObject);
-        pd.ChangeEnergy(5);
+        pd.ChangeEnergy(10);
     }
 
     public void Drop()
