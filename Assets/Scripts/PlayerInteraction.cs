@@ -7,7 +7,14 @@ public class PlayerInteraction : MonoBehaviour
 {
     private GameObject heldFood; // Reference to the currently held food item
     [SerializeField] GameObject mouthPosition; // Assign this in the inspector to the player's mouth transform
+    [SerializeField] AudioClip[] audioClips;
+    AudioSource audioSource;
 
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -24,6 +31,7 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     //Debug.Log("caterpilar");
                     col.gameObject.GetComponent<Edible>()?.Eat();
+                    audioSource.PlayOneShot(audioClips[0]);
                 }
             }
         }

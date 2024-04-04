@@ -661,7 +661,7 @@ MonoBehaviour:
   airDrag: 1
   flapDrag: 3
   jumpForce: 500
-  gravityMultiplier: 3
+  gravityMultiplier: 1
   glideGravityMultiplier: 0.3
   glideSpeed: 14
   groundCheckRadius: 1
@@ -856,6 +856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouthPosition: {fileID: 2253881147010337740}
+  audioClips: []
 --- !u!82 &381662906606012008
 AudioSource:
   m_ObjectHideFlags: 0
@@ -866,7 +867,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e48e6834ca929a6468e6f521493fe957, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1d3d3d6ee1255964db1d4ed97ee56c6a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
