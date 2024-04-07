@@ -51,7 +51,7 @@ public class LoopingMusic : MonoBehaviour
             CurrentSeasonsClips = audioClips_1;
 
 
-            StartCoroutine(PlaySeasonMusic());
+            // StartCoroutine(PlaySeasonMusic());  // Only using 1 clip per season, it will loop.  
 
             Season1Started = true;
         }
@@ -62,7 +62,7 @@ public class LoopingMusic : MonoBehaviour
             // Assign the listofClips according to the season number
             CurrentSeasonsClips = audioClips_2;
 
-            StartCoroutine(PlaySeasonMusic());
+            // StartCoroutine(PlaySeasonMusic());
 
             Season2Started = true;
         }   
@@ -73,7 +73,7 @@ public class LoopingMusic : MonoBehaviour
             // Assign the listofClips according to the season number
             CurrentSeasonsClips = audioClips_2;
 
-            StartCoroutine(PlaySeasonMusic());
+            // StartCoroutine(PlaySeasonMusic());
 
             Season3Started = true;
         } 
@@ -82,7 +82,7 @@ public class LoopingMusic : MonoBehaviour
 
     }
 
-
+    //  This is designed to play 3 clips that loop all at the same time, staggared by some seconds.
     public IEnumerator PlaySeasonMusic()
     {
         
