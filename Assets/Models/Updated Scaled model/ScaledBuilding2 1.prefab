@@ -181,12 +181,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7348365996632165000}
   m_Layer: 0
-  m_Name: ScaledBuilding2
+  m_Name: ScaledBuilding2 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7348365996632165000
 Transform:
   m_ObjectHideFlags: 0
