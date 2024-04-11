@@ -11,6 +11,8 @@ public class HealthBarScript : MonoBehaviour
     [SerializeField] PlayerData pd;
 
     Slider EnergyBar;
+    
+    
     // Start is called before the first frame update
     void Start()
     {

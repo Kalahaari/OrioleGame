@@ -19,10 +19,11 @@ public class CloseMe : MonoBehaviour
         }
 
    }
-
+    // This must be called to make the Energy bar drain
     public void ResumeTime()
     {
         Time.timeScale = 1;
+        print("Time.timeScale = 1 in CloseMe on this GO:"+ gameObject.name);
     }
 
 }
