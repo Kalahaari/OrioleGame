@@ -132,4 +132,4 @@ MonoBehaviour:
   foodPrefabs:
   - {fileID: 8222959755480758114, guid: fa859e09a8efb07448f79b9fa89d2da3, type: 3}
   spawnInterval: 5
-  spawnAreaSize: 5
+  spawnAreaSize: 2
