@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8755809380954735690}
   m_Layer: 0
-  m_Name: ScaledBuilding3
+  m_Name: BuildingScaled3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
