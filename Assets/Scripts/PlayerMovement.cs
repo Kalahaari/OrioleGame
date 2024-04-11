@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
             state = State.Run;
         }
 
-        Gravity(glideHeld);
+        
 
     }
     //test
@@ -132,18 +132,20 @@ public class PlayerMovement : MonoBehaviour
         {
             case State.Run:
                 rb.AddForce(movementValue * moveSpeed, ForceMode.Force);
+                RotatePlayer();
                 break;
             case State.Glide:
                 rb.AddForce(transform.forward * glideSpeed, ForceMode.Force);
-
+                RotatePlayer();
                 //turn towards movementvalue, but slowly
                 //rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + turnRadius, transform.rotation.eulerAngles.z), turnSpeed));
                 //rb.MoveRotation(Quaternion.RotateTowards());
                 break;
-
+                
             case State.Flap:
                 break;
         }
+        Gravity(glideHeld);
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -198,7 +200,7 @@ public class PlayerMovement : MonoBehaviour
         ChangeDrag(airDrag);
         ms.anim.Play("Glide");
         ms.TrailsOn();
-        RotatePlayer();
+        
         //turnRadius = (movementValue.x > 0) ? turnRadius : -turnRadius;
 
         /*if(movementValue.x > 0)
@@ -223,7 +225,7 @@ public class PlayerMovement : MonoBehaviour
     void Run()
     {
         //rb.MoveRotation(Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
-        RotatePlayer();
+        
 
         ChangeDrag(groundDrag);
         ms.anim.Play("Run");
