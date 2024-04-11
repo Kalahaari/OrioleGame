@@ -2012,6 +2012,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseThisPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 6216259107518761385, guid: 1832540daa14b4f41bc0ca10f2f171f3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360720406933468498, guid: 1832540daa14b4f41bc0ca10f2f171f3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8081742150600035368, guid: 1832540daa14b4f41bc0ca10f2f171f3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -10713,10 +10723,50 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5208588795768538712, guid: 59ff87e05090356419aae322c51252fa,
+        type: 3}
+      propertyPath: audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 35e79131a8e0796479c24d7d2ea17595, type: 3}
+    - target: {fileID: 5208588795768538712, guid: 59ff87e05090356419aae322c51252fa,
+        type: 3}
+      propertyPath: audioClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: a8c2debe2a4e4704a95baf40f7b1ee4f, type: 3}
     - target: {fileID: 5223934665712823710, guid: 59ff87e05090356419aae322c51252fa,
         type: 3}
       propertyPath: m_Name
       value: nestingTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710043719659240670, guid: 59ff87e05090356419aae322c51252fa,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 4.513298
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710043719659240670, guid: 59ff87e05090356419aae322c51252fa,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.885027
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710043719659240670, guid: 59ff87e05090356419aae322c51252fa,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 4.9872437
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710043719659240670, guid: 59ff87e05090356419aae322c51252fa,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.23484421
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710043719659240670, guid: 59ff87e05090356419aae322c51252fa,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.47879696
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710043719659240670, guid: 59ff87e05090356419aae322c51252fa,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.18344116
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
