@@ -7,10 +7,20 @@ public class NestingTree : MonoBehaviour
     [SerializeField] GameObject triggerVolume;
     [SerializeField] GameObject NestingUIPrefab;
     [SerializeField] GameObject NestIndicator;
+    [SerializeField] AudioClip femaleBirdsong;
+    [SerializeField] AudioClip maleBirdsong;
+    AudioSource audioSource;
+
+    [SerializeField] GameObject femaleBird;
+    [SerializeField] GameObject femaleBirdLocation;
 
     GameObject LocalNestingUI;
 
     public float NestCompletionAmount;
+
+    
+    bool inTree;
+    int numberOfSings;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +29,7 @@ public class NestingTree : MonoBehaviour
         LocalNestingUI.GetComponentInChildren<NestingUI>().tree = gameObject;
         LocalNestingUI.SetActive(false);
         NestIndicator.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,8 +43,10 @@ public class NestingTree : MonoBehaviour
         
         if (other.gameObject.CompareTag("Player"))
         {
+            other.gameObject.GetComponent<PlayerInteraction>().NestingTree = gameObject;
             LocalNestingUI.SetActive(true);
             NestIndicator.SetActive(true);
+            inTree = true;
             Debug.Log("entertree");
         }
     }
@@ -43,9 +56,35 @@ public class NestingTree : MonoBehaviour
         
         if (other.gameObject.CompareTag("Player"))
         {
+            other.gameObject.GetComponent<PlayerInteraction>().NestingTree = null;
             Debug.Log("exittree");
+            inTree = false;
             //LocalNestingUI.SetActive(false);
             //NestIndicator.SetActive(false);
         }
     }
+
+    public void BirdSing()
+    {
+        if (inTree)
+        {
+            StartCoroutine(SingingEchoCoroutine());
+            numberOfSings++;
+        }
+        
+    }
+
+    IEnumerator SingingEchoCoroutine()
+    {
+        yield return new WaitForSeconds(maleBirdsong.length);
+        yield return new WaitForSeconds(0.5f);
+        audioSource.PlayOneShot(femaleBirdsong, numberOfSings);
+        yield return new WaitForSeconds(femaleBirdsong.length);
+        if (numberOfSings >= 3)
+        {
+            Instantiate(femaleBird, femaleBirdLocation.transform.position, femaleBirdLocation.transform.rotation, femaleBirdLocation.transform);
+            Debug.Log("next season");
+        }
+    }
+    
 }

@@ -892,6 +892,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 29b28d2e-8a0b-4f8b-a240-7e754c650e33
     m_ActionName: Player/Eat
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1192978697102885837}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: OnSing
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cbff93be-e00e-4945-98dc-f195c701e3ef
+    m_ActionName: Player/Sing[/Keyboard/t]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -910,7 +926,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouthPosition: {fileID: 2253881147010337740}
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 9cee42acdefa0f64586f3cdc41780b7a, type: 3}
+  pd: {fileID: 11400000, guid: 77fab0ed6be934645ae35ccfd8299f65, type: 2}
+  singEnergyCost: 10
+  NestingTree: {fileID: 0}
 --- !u!82 &381662906606012008
 AudioSource:
   m_ObjectHideFlags: 0

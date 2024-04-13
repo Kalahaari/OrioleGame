@@ -8,18 +8,20 @@ public class PlayerInteraction : MonoBehaviour
     private GameObject heldFood; // Reference to the currently held food item
     [SerializeField] GameObject mouthPosition; // Assign this in the inspector to the player's mouth transform
     [SerializeField] AudioClip[] audioClips;
+    [SerializeField] PlayerData pd;
+    [SerializeField] int singEnergyCost;
+    AudioClip birdsong;
     AudioSource audioSource;
 
+    public GameObject NestingTree;
 
+    bool readyForSing;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        birdsong = audioClips[0];
     }
 
-    void Update()
-    {
-        
-    }
     public void OnFeed(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -31,7 +33,7 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     //Debug.Log("caterpilar");
                     col.gameObject.GetComponent<Edible>()?.Eat();
-                    audioSource.PlayOneShot(audioClips[0]);
+                    //audioSource.PlayOneShot(audioClips[0]);
                 }
             }
         }
@@ -63,33 +65,38 @@ public class PlayerInteraction : MonoBehaviour
 
                         heldFood.gameObject.GetComponent<CanBePickedUp>().PickUp();
 
-                        //col.gameObject.transform.SetParent(mouthPosition.transform);
-                        //col.transform.localPosition = Vector3.zero;
-                        //col.transform.localRotation = Quaternion.identity;
-
-
-
-                        /*GameObject item = col.gameObject;
-                        CanBePickedUp pickUpComponent = item.GetComponent<CanBePickedUp>();
-                        if (pickUpComponent != null)
-                        {
-                            pickUpComponent.PickUp();
-                            if (heldFood != null)
-                            {
-                                // If already holding an item, drop it or destroy it
-                                // Implement drop or destroy logic here
-                            }
-                            heldFood = item;
-                            // Parent the item to the mouth position and reset its local position and rotation
-                            item.transform.SetParent(mouthPosition);
-                            item.transform.localPosition = Vector3.zero;
-                            item.transform.localRotation = Quaternion.identity;
-                        }*/
-
                     }
                 }
             }
         }
+    }
+
+    public void OnSing(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("sing");
+            audioSource.PlayOneShot(audioClips[0]);
+            pd.ChangeEnergy(-singEnergyCost);
+
+            if (readyForSing)
+            {
+                StartCoroutine(SingCooldown());
+            }
+
+            if (NestingTree == null) return;
+            NestingTree.GetComponent<NestingTree>().BirdSing();
+        }
+        
+
+
+    }
+
+    IEnumerator SingCooldown()
+    {
+        readyForSing = false;
+        yield return new WaitForSeconds(birdsong.length);
+        readyForSing = true;
     }
 
     void DropHeldItem()
