@@ -7,14 +7,14 @@ public class SeasonChange : MonoBehaviour
     int SeasonTimer;
     [SerializeField] Material[] material;
     Material[] tempArray;
-    private Renderer rend;
+    private MeshRenderer rend;
     [SerializeField] Material barkMat;
     
     void Start()
     {
         updateArray(material[0]);
         //SeasonTimer = SeasonTimerMax;
-        rend = GetComponent<Renderer>();
+        rend = GetComponent<MeshRenderer>();
         rend.enabled = true;
         rend.materials = tempArray;
         //StartCoroutine(CountDown());
