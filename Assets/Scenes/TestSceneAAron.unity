@@ -205,33 +205,11 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 897bbf7420859464c982120207000ae7,
+    - targetCorrespondingSourceObject: {fileID: -3957782524123411102, guid: 897bbf7420859464c982120207000ae7,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 751723750}
+      addedObject: {fileID: 1803568029}
   m_SourcePrefab: {fileID: 100100000, guid: 897bbf7420859464c982120207000ae7, type: 3}
---- !u!1 &751723749 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 897bbf7420859464c982120207000ae7,
-    type: 3}
-  m_PrefabInstance: {fileID: 751723748}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &751723750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 751723749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1969fce51529413dbccd35261f2e42c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material:
-  - {fileID: 0}
-  - {fileID: 0}
-  barkMat: {fileID: 0}
 --- !u!1 &1185218830
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +571,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1803568025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3957782524123411102, guid: 897bbf7420859464c982120207000ae7,
+    type: 3}
+  m_PrefabInstance: {fileID: 751723748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1803568029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803568025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1969fce51529413dbccd35261f2e42c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material:
+  - {fileID: 2100000, guid: eb4a6847f10f66548ab66535dc86da25, type: 2}
+  - {fileID: 2100000, guid: 3a94827c244f4884e8d7cfa544b563db, type: 2}
+  - {fileID: 2100000, guid: 5abcbcacb1bcff84388e900421d31ee9, type: 2}
+  barkMat: {fileID: 2100000, guid: 6283203bb699a9a4bbc3a78c44571c0f, type: 2}
 --- !u!1001 &2526593087904901417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -601,6 +602,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 713395386241449989, guid: bf213995e91aa2142a33c31ce96f0988,
+        type: 3}
+      propertyPath: SeasonTimer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5161057468216235470, guid: bf213995e91aa2142a33c31ce96f0988,
         type: 3}
       propertyPath: m_Name
