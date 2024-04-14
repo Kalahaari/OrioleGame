@@ -78,7 +78,7 @@ public class NestingTree : MonoBehaviour
     {
         yield return new WaitForSeconds(maleBirdsong.length);
         yield return new WaitForSeconds(0.5f);
-        audioSource.PlayOneShot(femaleBirdsong, numberOfSings);
+        audioSource.PlayOneShot(femaleBirdsong, numberOfSings + 1);
         yield return new WaitForSeconds(femaleBirdsong.length);
         if (numberOfSings >= 3)
         {
