@@ -125,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
         //print(state);
 
     }
-    //test
+
     private void FixedUpdate()
     {
         switch (state)
@@ -134,16 +134,15 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(movementValue * moveSpeed, ForceMode.Force);
                 RotatePlayer();
                 break;
+
             case State.Glide:
                 rb.AddForce(transform.forward * glideSpeed, ForceMode.Force);
                 RotatePlayer();
-                //turn towards movementvalue, but slowly
-                //rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + turnRadius, transform.rotation.eulerAngles.z), turnSpeed));
-                //rb.MoveRotation(Quaternion.RotateTowards());
                 break;
-                
+
             case State.Flap:
                 break;
+
         }
         Gravity(glideHeld);
     }
@@ -209,25 +208,6 @@ public class PlayerMovement : MonoBehaviour
         ms.anim.Play("Glide");
         ms.TrailsOn();
         
-        //turnRadius = (movementValue.x > 0) ? turnRadius : -turnRadius;
-
-        /*if(movementValue.x > 0)
-        {
-            turnRadius = turnRadiusAmount;
-            ms.TurnFlight(-1);
-        } else if(movementValue.x < 0)
-        {
-            turnRadius = -turnRadiusAmount;
-            ms.TurnFlight(1);
-        } else
-        {
-            turnRadius = 0;
-            ms.TurnFlight(0);
-        }*/
-
-        //Debug.Log(turnRadius);
-
-        //ms.TurnFlight(turnRadius > 0);
     }
 
     void Run()
@@ -242,8 +222,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Flap()
     {
-        //RotateMovementToCamera();
-        //ms.Rotate(movementValue);
 
         ms.TrailsOff();
         ChangeDrag(flapDrag);
@@ -254,6 +232,11 @@ public class PlayerMovement : MonoBehaviour
         if (movementValue.magnitude == 0) { return; }
         var rotation = Quaternion.LookRotation(movementValue);
         rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed));
+    }
+
+    void TiltPlayer()
+    {
+        
     }
 
     IEnumerator EnergyCoroutine()
