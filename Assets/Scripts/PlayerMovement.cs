@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
             state = State.Run;
         }
 
-        
+        //print(state);
 
     }
     //test
@@ -176,7 +176,15 @@ public class PlayerMovement : MonoBehaviour
     }
     void Gravity(bool gliding)
     {
-        rb.AddForce(Physics.gravity * (gliding ? glideGravityMultiplier : gravityMultiplier), ForceMode.Acceleration);
+        //rb.AddForce(Physics.gravity * (gliding ? glideGravityMultiplier : gravityMultiplier), ForceMode.Acceleration);
+        if (gliding)
+        {
+            rb.AddForce(Physics.gravity * glideGravityMultiplier, ForceMode.Acceleration);
+        }
+        else
+        {
+            rb.AddForce(Physics.gravity * gravityMultiplier, ForceMode.Acceleration);
+        }
     }
     void GroundCheck()
     {

@@ -15,11 +15,12 @@ public class PlayerInteraction : MonoBehaviour
 
     public GameObject NestingTree;
 
-    bool readyForSing;
+    public bool readyForSing;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         birdsong = audioClips[0];
+        readyForSing = true;
     }
 
     public void OnFeed(InputAction.CallbackContext context)
@@ -75,21 +76,17 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("sing");
-            audioSource.PlayOneShot(audioClips[0]);
-            pd.ChangeEnergy(-singEnergyCost);
-
             if (readyForSing)
             {
                 StartCoroutine(SingCooldown());
+                Debug.Log("sing");
+                audioSource.PlayOneShot(audioClips[0]);
+                pd.ChangeEnergy(-singEnergyCost);
+
+                if (NestingTree == null) return;
+                NestingTree.GetComponent<NestingTree>().BirdSing();
             }
-
-            if (NestingTree == null) return;
-            NestingTree.GetComponent<NestingTree>().BirdSing();
         }
-        
-
-
     }
 
     IEnumerator SingCooldown()
