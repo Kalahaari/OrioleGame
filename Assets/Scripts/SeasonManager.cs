@@ -8,8 +8,10 @@ public class SeasonManager : MonoBehaviour
     public delegate void OnSeasonChange();
     public static OnSeasonChange onSeasonChange;
     [SerializeField] float SeasonTimer;
+    [SerializeField] GameObject[] successScreens;
+    [SerializeField] GameObject[] failScreens;
     public int CurrentSeason;
-    float CurrentTimer;
+    public float CurrentTimer;
     // Start is called before the first frame update
     void Awake()
     {
@@ -24,17 +26,21 @@ public class SeasonManager : MonoBehaviour
         CurrentTimer -= Time.deltaTime;
         if(CurrentTimer <= 0)
         {
-            NextSeason();
+            failScreens[CurrentSeason - 1].SetActive(true);
+            failScreens[CurrentSeason - 1].GetComponent<CloseMe>().FreezeTime();
+            //NextSeason(CurrentSeason);
         }
 
     }
 
-    void NextSeason()
+    public void NextSeason(int seasonNumber)
     {
+        successScreens[seasonNumber - 1].SetActive(true);
+        successScreens[seasonNumber - 1].GetComponent<CloseMe>().FreezeTime();
         CurrentSeason++;
         CurrentTimer = SeasonTimer;
         onSeasonChange?.Invoke();
-        Debug.Log("timerover");
+        //Debug.Log("timerover");
     }
 
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CloseMe : MonoBehaviour
 {
@@ -19,6 +20,18 @@ public class CloseMe : MonoBehaviour
         }
 
    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void FreezeTime()
+    {
+        Time.timeScale = 0;
+        print("Time.timeScale = 0 in CloseMe on this GO:" + gameObject.name);
+    }
+
     // This must be called to make the Energy bar drain
     public void ResumeTime()
     {
