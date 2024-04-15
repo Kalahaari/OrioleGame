@@ -20,7 +20,7 @@ public class NestingTree : MonoBehaviour
 
     
     bool inTree;
-    int numberOfSings;
+    public int numberOfSings;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,10 +43,17 @@ public class NestingTree : MonoBehaviour
         
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerInteraction>().NestingTree = gameObject;
-            LocalNestingUI.SetActive(true);
-            NestIndicator.SetActive(true);
             inTree = true;
+
+            other.gameObject.GetComponent<PlayerInteraction>().NestingTree = gameObject;
+
+            if(SeasonManager.instance.CurrentSeason == 2)
+            {
+                LocalNestingUI.SetActive(true);
+                NestIndicator.SetActive(true);
+            }
+            
+            
             Debug.Log("entertree");
         }
     }
@@ -66,6 +73,7 @@ public class NestingTree : MonoBehaviour
 
     public void BirdSing()
     {
+        if (SeasonManager.instance.CurrentSeason != 1) return;
         if (inTree)
         {
             StartCoroutine(SingingEchoCoroutine());
@@ -77,14 +85,19 @@ public class NestingTree : MonoBehaviour
     IEnumerator SingingEchoCoroutine()
     {
         yield return new WaitForSeconds(maleBirdsong.length);
-        yield return new WaitForSeconds(0.5f);
-        audioSource.PlayOneShot(femaleBirdsong, numberOfSings + 1);
-        yield return new WaitForSeconds(femaleBirdsong.length);
-        if (numberOfSings >= 3)
+        if (SeasonManager.instance.CurrentSeason == 1)
         {
-            Instantiate(femaleBird, femaleBirdLocation.transform.position, femaleBirdLocation.transform.rotation, femaleBirdLocation.transform);
-            Debug.Log("next season");
+            yield return new WaitForSeconds(0.5f);
+            audioSource.PlayOneShot(femaleBirdsong, numberOfSings + 1);
+            yield return new WaitForSeconds(femaleBirdsong.length);
+            if (numberOfSings >= 3)
+            {
+                Instantiate(femaleBird, femaleBirdLocation.transform.position, femaleBirdLocation.transform.rotation, femaleBirdLocation.transform);
+                Debug.Log("next season");
+                SeasonManager.instance.NextSeason(1);
+            }
         }
+        
     }
     
 }
