@@ -496,6 +496,7 @@ GameObject:
   - component: {fileID: 7164665385269019995}
   - component: {fileID: 4367822037390875771}
   - component: {fileID: 2725270489660492627}
+  - component: {fileID: -4386418200331021398}
   m_Layer: 0
   m_Name: nestingTree
   m_TagString: Untagged
@@ -545,6 +546,7 @@ MonoBehaviour:
     type: 3}
   femaleBirdLocation: {fileID: 2804806012352575256}
   NestCompletionAmount: 0
+  numberOfSings: 0
 --- !u!54 &4367822037390875771
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -668,6 +670,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4386418200331021398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5223934665712823710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ec5828364bb3a4792a1f58af2b60bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodPrefabs:
+  - {fileID: 8222959755480758114, guid: fa859e09a8efb07448f79b9fa89d2da3, type: 3}
+  spawnInterval: 10
+  spawnAreaSize: 2
 --- !u!1 &5828650338807026819
 GameObject:
   m_ObjectHideFlags: 0
