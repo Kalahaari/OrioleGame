@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1661417806520017378
+--- !u!1 &4701809803819207179
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4443904201091743860}
-  - component: {fileID: 1894000011670427939}
-  - component: {fileID: 3323659298796393493}
+  - component: {fileID: 5335639342522536113}
+  - component: {fileID: 9053400884379688724}
+  - component: {fileID: 6503430317376302046}
   m_Layer: 0
-  m_Name: polySurface475
+  m_Name: NN_porcelainberry_vines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4443904201091743860
+--- !u!4 &5335639342522536113
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661417806520017378}
+  m_GameObject: {fileID: 4701809803819207179}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -84.23657, y: 3.666352, z: 24.12885}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1039983960467467121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1894000011670427939
+--- !u!33 &9053400884379688724
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661417806520017378}
-  m_Mesh: {fileID: -3677692948071274557, guid: b54549dfef80fcf4791fa9a7e7ebd985, type: 3}
---- !u!23 &3323659298796393493
+  m_GameObject: {fileID: 4701809803819207179}
+  m_Mesh: {fileID: 4526046863574395622, guid: 912537bcb8bb28b4cbdacea5447c1b1c, type: 3}
+--- !u!23 &6503430317376302046
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661417806520017378}
+  m_GameObject: {fileID: 4701809803819207179}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,9 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1151844921754575795, guid: b54549dfef80fcf4791fa9a7e7ebd985, type: 3}
-  - {fileID: -4597107667637640440, guid: b54549dfef80fcf4791fa9a7e7ebd985, type: 3}
-  - {fileID: 6034957751646507721, guid: b54549dfef80fcf4791fa9a7e7ebd985, type: 3}
+  - {fileID: 1151844921754575795, guid: 912537bcb8bb28b4cbdacea5447c1b1c, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1039983960467467121}
   m_Layer: 0
-  m_Name: ScaledNonNativeBush1
+  m_Name: ScaledNonNativeAloeBush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,6 +112,6 @@ Transform:
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4443904201091743860}
+  - {fileID: 5335639342522536113}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
