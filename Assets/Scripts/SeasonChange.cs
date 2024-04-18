@@ -22,7 +22,7 @@ public class SeasonChange : MonoBehaviour
 
     void updateArray(Material data)
     {
-        tempArray = new Material[] { barkMat, data};
+        tempArray = new Material[] { data, barkMat};
     }
     
     private void OnEnable()
