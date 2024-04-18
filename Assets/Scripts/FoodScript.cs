@@ -45,8 +45,6 @@ public class FoodScript : MonoBehaviour
         audioSource.PlayOneShot(audioClips[1]);
         Destroy(this.gameObject);
         pd.ChangeEnergy(10);
-        
-
     }
 
     public void Drop()
