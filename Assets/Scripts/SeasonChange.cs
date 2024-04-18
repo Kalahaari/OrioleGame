@@ -9,6 +9,7 @@ public class SeasonChange : MonoBehaviour
     Material[] tempArray;
     private MeshRenderer rend;
     [SerializeField] Material barkMat;
+    [SerializeField] bool swapMaterials;
     
     void Start()
     {
@@ -22,7 +23,14 @@ public class SeasonChange : MonoBehaviour
 
     void updateArray(Material data)
     {
-        tempArray = new Material[] { data, barkMat};
+        if (swapMaterials)
+        {
+            tempArray = new Material[] { data, barkMat };
+        } else
+        {
+            tempArray = new Material[] { barkMat, data };
+        }
+        
     }
     
     private void OnEnable()
