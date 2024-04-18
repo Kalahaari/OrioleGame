@@ -18205,6 +18205,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScaledBuilding1 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 2184366273554467512, guid: 7a81b652078b319409665532b6950f59,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31799,6 +31804,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3a94827c244f4884e8d7cfa544b563db, type: 2}
   - {fileID: 2100000, guid: 5abcbcacb1bcff84388e900421d31ee9, type: 2}
   barkMat: {fileID: 2100000, guid: 6283203bb699a9a4bbc3a78c44571c0f, type: 2}
+  swapMaterials: 0
 --- !u!4 &2130350626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 581320017205950965, guid: 7a81b652078b319409665532b6950f59,
