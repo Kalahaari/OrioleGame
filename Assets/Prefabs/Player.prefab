@@ -127,6 +127,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &945823115277026482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 404587966625780809}
+  m_Layer: 0
+  m_Name: MouthPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &404587966625780809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945823115277026482}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.055, y: 0, z: -0.723}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1080923961378237270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2253881147010337740
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +704,7 @@ Transform:
   m_Children:
   - {fileID: 4259546049695651619}
   - {fileID: 4407664295412829659}
+  - {fileID: 404587966625780809}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &8171532611304518910
@@ -728,8 +760,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   pd: {fileID: 11400000, guid: 77fab0ed6be934645ae35ccfd8299f65, type: 2}
   flapEnergy: 5
-  EnergyDecreaseInterval: 1
-  EnergyDecreaseAmount: 1
+  EnergyDecreaseInterval: 5
+  EnergyDecreaseAmount: 0.5
   model: {fileID: 852334474820574623}
 --- !u!54 &2896312234178879965
 Rigidbody:
@@ -906,6 +938,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_ActionId: 29b28d2e-8a0b-4f8b-a240-7e754c650e33
+    m_ActionName: Player/Eat
+  - m_PersistentCalls:
+      m_Calls: []
     m_ActionId: cbff93be-e00e-4945-98dc-f195c701e3ef
     m_ActionName: Player/Sing[/Keyboard/t]
   m_NeverAutoSwitchControlSchemes: 0
@@ -925,7 +961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52a31351222034449fbc214fc5c68c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouthPosition: {fileID: 2253881147010337740}
+  mouthPosition: {fileID: 404587966625780809}
   audioClips:
   - {fileID: 8300000, guid: 9cee42acdefa0f64586f3cdc41780b7a, type: 3}
   pd: {fileID: 11400000, guid: 77fab0ed6be934645ae35ccfd8299f65, type: 2}
