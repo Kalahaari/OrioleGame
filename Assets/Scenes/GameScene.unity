@@ -8686,6 +8686,21 @@ PrefabInstance:
       propertyPath: m_MaxValue
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4989069646670847151, guid: 49033aa26510245ba93d29b6736f983e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989069646670847151, guid: 49033aa26510245ba93d29b6736f983e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989069646670847151, guid: 49033aa26510245ba93d29b6736f983e,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5115145539673295715, guid: 49033aa26510245ba93d29b6736f983e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -8784,6 +8799,16 @@ PrefabInstance:
     - target: {fileID: 5115145539673295715, guid: 49033aa26510245ba93d29b6736f983e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440172892500443351, guid: 49033aa26510245ba93d29b6736f983e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440172892500443351, guid: 49033aa26510245ba93d29b6736f983e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6045040778378803858, guid: 49033aa26510245ba93d29b6736f983e,
@@ -9270,6 +9295,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
+        type: 3}
+      propertyPath: EnergyDecreaseAmount
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 678088989511755511, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
         type: 3}
       propertyPath: EnergyDecreaseInterval

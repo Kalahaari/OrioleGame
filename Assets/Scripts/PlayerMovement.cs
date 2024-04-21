@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Energy Variables")]
     [SerializeField] int flapEnergy;
     [SerializeField] float EnergyDecreaseInterval;
-    [SerializeField] int EnergyDecreaseAmount;
+    [SerializeField] float EnergyDecreaseAmount;
 
     #region Model
     [SerializeField] GameObject model;
