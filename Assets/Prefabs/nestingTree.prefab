@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: -4386418200331021398}
   m_Layer: 0
   m_Name: nestingTree
-  m_TagString: Untagged
+  m_TagString: tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -606,7 +606,7 @@ Transform:
   m_GameObject: {fileID: 5643772247233584361}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.821, y: 29.82, z: 0.448}
+  m_LocalPosition: {x: 1.73, y: 33, z: 1.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -627,7 +627,7 @@ MonoBehaviour:
   foodPrefabs:
   - {fileID: 8222959755480758114, guid: fa859e09a8efb07448f79b9fa89d2da3, type: 3}
   spawnInterval: 15
-  spawnAreaSize: 2
+  spawnAreaSize: 3
 --- !u!1 &5828650338807026819
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 1461549382175276576}
   m_Layer: 0
   m_Name: FINAL_N_Tree2_maple2
-  m_TagString: Untagged
+  m_TagString: tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

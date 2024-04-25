@@ -7,21 +7,16 @@ public class Window : MonoBehaviour
     [SerializeField] PlayerData pd;
     [SerializeField] int Damage;
 
+
     // Start is called before the first frame update
-    void Start()
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Ouch window!");
+            pd.ChangeEnergy(Damage);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider collision)
-    {
-        Debug.Log("Ouch window!");
-        pd.ChangeEnergy(Damage);
-    }
 }
