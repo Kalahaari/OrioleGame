@@ -245,6 +245,11 @@ public class PlayerMovement : MonoBehaviour
         {
             yield return new WaitForSeconds(EnergyDecreaseInterval);
             pd.ChangeEnergy(-EnergyDecreaseAmount);
+            //Debug.Log(pd.playerEnergy);
+            if(pd.playerEnergy > 100)
+            {
+                pd.SetEnergy(100);
+            }
         }
     }
 }
