@@ -7,7 +7,7 @@ public class JournalManager : MonoBehaviour
     public GameObject MainMenu;
     public GameObject Birds;
     public GameObject Trees;
-    public GameObject Shrubs;
+  //  public GameObject Shrubs;
     public GameObject Plants;
     public GameObject Food;
 
@@ -61,9 +61,9 @@ public class JournalManager : MonoBehaviour
 
     public void OpenShrubs()
     {
-        CloseCurrentPanel(); // Close the current panel, if any
-        Shrubs.SetActive(true);
-        currentPanel = Shrubs; // Update the current panel reference
+        //CloseCurrentPanel(); // Close the current panel, if any
+       // Shrubs.SetActive(true);
+        //currentPanel = Shrubs; // Update the current panel reference
     }
 
     public void OpenPlants()
