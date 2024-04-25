@@ -6,10 +6,10 @@ public class JournalManager : MonoBehaviour
     public GameObject[] panelsToHide;
     public GameObject MainMenu;
     public GameObject Birds;
+    public GameObject Trees;
+    public GameObject Shrubs;
     public GameObject Plants;
     public GameObject Food;
-    public GameObject AboutOri;
-    public GameObject AboutBlock;
 
     private GameObject currentPanel; // Track the currently active panel
 
@@ -50,6 +50,20 @@ public class JournalManager : MonoBehaviour
         CloseCurrentPanel(); // Close the current panel, if any
         Birds.SetActive(true);
         currentPanel = Birds; // Update the current panel reference
+    }
+
+    public void OpenTrees()
+    {
+        CloseCurrentPanel(); // Close the current panel, if any
+        Trees.SetActive(true);
+        currentPanel = Trees; // Update the current panel reference
+    }
+
+    public void OpenShrubs()
+    {
+        CloseCurrentPanel(); // Close the current panel, if any
+        Shrubs.SetActive(true);
+        currentPanel = Shrubs; // Update the current panel reference
     }
 
     public void OpenPlants()
