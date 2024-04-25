@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6630352742574285111}
   - component: {fileID: 8221952440950986467}
   - component: {fileID: 3043803383594400677}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 5735711770789756276}
   - component: {fileID: 533835570562488121}
   - component: {fileID: 8862966807684259820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
