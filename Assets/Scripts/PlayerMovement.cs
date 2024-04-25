@@ -138,6 +138,7 @@ public class PlayerMovement : MonoBehaviour
             case State.Glide:
                 rb.AddForce(transform.forward * glideSpeed, ForceMode.Force);
                 RotatePlayer();
+                TiltPlayer();
                 break;
 
             case State.Flap:
@@ -236,7 +237,8 @@ public class PlayerMovement : MonoBehaviour
 
     void TiltPlayer()
     {
-        
+        //Debug.Log(rb.angularVelocity);
+        //if(move)
     }
 
     IEnumerator EnergyCoroutine()

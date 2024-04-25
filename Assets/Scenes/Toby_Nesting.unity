@@ -186,6 +186,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Caterpillar (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8222959755480758114, guid: fa859e09a8efb07448f79b9fa89d2da3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -497,6 +502,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Caterpillar (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8222959755480758114, guid: fa859e09a8efb07448f79b9fa89d2da3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -565,6 +575,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Caterpillar (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8222959755480758114, guid: fa859e09a8efb07448f79b9fa89d2da3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -632,6 +647,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Caterpillar (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8222959755480758114, guid: fa859e09a8efb07448f79b9fa89d2da3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -808,6 +828,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Caterpillar (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8222959755480758114, guid: fa859e09a8efb07448f79b9fa89d2da3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -995,6 +1020,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Caterpillar (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8222959755480758114, guid: fa859e09a8efb07448f79b9fa89d2da3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1063,6 +1093,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Caterpillar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8222959755480758114, guid: fa859e09a8efb07448f79b9fa89d2da3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1130,6 +1165,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Caterpillar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8222959755480758114, guid: fa859e09a8efb07448f79b9fa89d2da3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1342,6 +1382,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Caterpillar (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8222959755480758114, guid: fa859e09a8efb07448f79b9fa89d2da3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1409,6 +1454,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Caterpillar (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8222959755480758114, guid: fa859e09a8efb07448f79b9fa89d2da3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2011,7 +2061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &5380170364183159802
 MeshFilter:
   m_ObjectHideFlags: 0
