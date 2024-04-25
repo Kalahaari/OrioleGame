@@ -152,7 +152,7 @@ Transform:
   m_GameObject: {fileID: 945823115277026482}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.055, y: 0, z: -0.723}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52a31351222034449fbc214fc5c68c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouthPosition: {fileID: 404587966625780809}
+  mouthPosition: {fileID: 945823115277026482}
   audioClips:
   - {fileID: 8300000, guid: 9cee42acdefa0f64586f3cdc41780b7a, type: 3}
   pd: {fileID: 11400000, guid: 77fab0ed6be934645ae35ccfd8299f65, type: 2}
