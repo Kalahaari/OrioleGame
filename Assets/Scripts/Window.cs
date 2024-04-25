@@ -5,6 +5,7 @@ using UnityEngine;
 public class Window : MonoBehaviour
 {
     [SerializeField] PlayerData pd;
+    [SerializeField] int Damage;
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +19,9 @@ public class Window : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         Debug.Log("Ouch window!");
-        pd.ChangeEnergy(-5);
+        pd.ChangeEnergy(Damage);
     }
 }
