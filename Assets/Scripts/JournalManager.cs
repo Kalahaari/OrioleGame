@@ -6,10 +6,11 @@ public class JournalManager : MonoBehaviour
     public GameObject[] panelsToHide;
     public GameObject MainMenu;
     public GameObject Birds;
-    public GameObject Trees;
+    public GameObject Ori;
   //  public GameObject Shrubs;
     public GameObject Plants;
     public GameObject Food;
+    [SerializeField] GameObject Journal;
 
     private GameObject currentPanel; // Track the currently active panel
 
@@ -25,15 +26,37 @@ public class JournalManager : MonoBehaviour
     private void Update()
     {
         //if J is pressed Journal Menu Opens
+        
+        if (currentPanel == MainMenu)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Journal.SetActive(false);
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.J))
         {
-            if (MainMenu.activeSelf) // If main menu is active, close it
+            if (Journal.activeSelf) // If main menu is active, close it
             {
-                CloseCurrentPanel();
+                Journal.SetActive(false);
             }
             else
             {
-                OpenMainMenu();
+                Journal.SetActive(true);
+                CloseCurrentPanel();
+                MainMenu.SetActive(true);
+                currentPanel = MainMenu;
+            }
+        }
+
+        if (Birds || Plants || Food || Ori)
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                CloseCurrentPanel();
+                MainMenu.SetActive(true);
+                currentPanel = MainMenu;
             }
         }
     }
@@ -52,12 +75,12 @@ public class JournalManager : MonoBehaviour
         currentPanel = Birds; // Update the current panel reference
     }
 
-    public void OpenTrees()
+    /*public void OpenTrees()
     {
         CloseCurrentPanel(); // Close the current panel, if any
         Trees.SetActive(true);
         currentPanel = Trees; // Update the current panel reference
-    }
+    }*/
 
     public void OpenShrubs()
     {
@@ -70,6 +93,7 @@ public class JournalManager : MonoBehaviour
     {
         CloseCurrentPanel(); // Close the current panel, if any
         Plants.SetActive(true);
+        Debug.Log("working");
         currentPanel = Plants; // Update the current panel reference
     }
 
@@ -80,11 +104,11 @@ public class JournalManager : MonoBehaviour
         currentPanel = Food; // Update the current panel reference
     }
 
-    public void OpenAboutOri()
+    public void HelpOri()
     {
         CloseCurrentPanel(); // Close the current panel, if any
-        Food.SetActive(true);
-        currentPanel = Food; // Update the current panel reference
+        Ori.SetActive(true);
+        currentPanel = Ori; // Update the current panel reference
     }
 
     public void OpenAboutBlock()
@@ -100,6 +124,62 @@ public class JournalManager : MonoBehaviour
         if (currentPanel != null)
         {
             currentPanel.SetActive(false);
+        }
+    }
+
+    public void NextButton()
+    {
+        print(panelsToHide.Length);
+        for (int i = 1; i < panelsToHide.Length; i++)
+        {
+            if (panelsToHide[i] == currentPanel)
+            {
+                if(i == 4)
+                {
+                  
+                    CloseCurrentPanel();
+                    panelsToHide[1].SetActive(true);
+                    currentPanel = panelsToHide[1];
+                    break;
+                }
+                else
+                {
+                     CloseCurrentPanel();
+                    panelsToHide[i + 1].SetActive(true);
+                    currentPanel = panelsToHide[i + 1];
+                    print(i);
+                    break;
+                }
+               
+            }
+        }
+    }
+
+    public void BackButton()
+    {
+        print(panelsToHide.Length);
+        for (int i = 1; i < panelsToHide.Length; i++)
+        {
+            if (panelsToHide[i] == currentPanel)
+            {
+                if (i == 1)
+                {
+
+                    CloseCurrentPanel();
+                    panelsToHide[4].SetActive(true);
+                    currentPanel = panelsToHide[4];
+                    break;
+                }
+                else
+                {
+                    CloseCurrentPanel();
+                    panelsToHide[i - 1].SetActive(true);
+                    currentPanel = panelsToHide[i - 1];
+                    print(i);
+                    break;
+                }
+
+            }
         }
     }
 }
