@@ -31799,7 +31799,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3a94827c244f4884e8d7cfa544b563db, type: 2}
   - {fileID: 2100000, guid: 5abcbcacb1bcff84388e900421d31ee9, type: 2}
   barkMat: {fileID: 2100000, guid: 6283203bb699a9a4bbc3a78c44571c0f, type: 2}
-  swapMaterials: 0
 --- !u!4 &2130350626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 581320017205950965, guid: 7a81b652078b319409665532b6950f59,
