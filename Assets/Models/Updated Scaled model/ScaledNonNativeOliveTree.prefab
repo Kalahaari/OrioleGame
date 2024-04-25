@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 5575703412500006726}
   - component: {fileID: 7675286051898782604}
   - component: {fileID: 2147610038548047170}
+  - component: {fileID: 5484598989656307632}
   m_Layer: 0
   m_Name: FINAL_NN_Tree1_witch
   m_TagString: Untagged
@@ -135,3 +136,25 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5abcbcacb1bcff84388e900421d31ee9, type: 2}
   barkMat: {fileID: 2100000, guid: 6283203bb699a9a4bbc3a78c44571c0f, type: 2}
   swapMaterials: 1
+--- !u!64 &5484598989656307632
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8179921824876876377}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5303923085450066343, guid: 5457e61f80173034aa7e1de3bfb2e571, type: 3}

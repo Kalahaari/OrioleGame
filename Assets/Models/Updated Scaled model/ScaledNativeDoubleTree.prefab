@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 7028981439849752170}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7, y: 30.01, z: 2.05}
+  m_LocalPosition: {x: 0.16, y: 32.66, z: 2.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47,7 +47,7 @@ MonoBehaviour:
   foodPrefabs:
   - {fileID: 8222959755480758114, guid: fa859e09a8efb07448f79b9fa89d2da3, type: 3}
   spawnInterval: 15
-  spawnAreaSize: 2
+  spawnAreaSize: 3
 --- !u!1 &7917633033687176511
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 3210456069045223816}
   m_Layer: 0
   m_Name: FINAL_N_Tree2_maple2
-  m_TagString: Untagged
+  m_TagString: tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 1062357889616950527}
   m_Layer: 0
   m_Name: ScaledNativeDoubleTree
-  m_TagString: Untagged
+  m_TagString: tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
