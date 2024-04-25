@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class DestroyObject : MonoBehaviour
 {
-    
-    
     [SerializeField] float destroyTime;
 // Start is called before the first frame update
     
@@ -20,6 +18,8 @@ public class DestroyObject : MonoBehaviour
         
     }
 
-
-
+    public void DestroyNow()
+    {
+        Destroy(gameObject);
+    }
 }
