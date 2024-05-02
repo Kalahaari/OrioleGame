@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FoodScript : MonoBehaviour
 {
-    
+    [SerializeField] SpiderMovement Spider;
     [SerializeField] PlayerData pd;
     [SerializeField] float DeletionTime;
-    BoxCollider boxCollider;
+    SphereCollider sphereCollider;
     Rigidbody rb;
     AudioSource audioSource;
 
@@ -16,7 +16,7 @@ public class FoodScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boxCollider = GetComponent<BoxCollider>();
+        sphereCollider = GetComponent<SphereCollider>();
         rb = GetComponent<Rigidbody>();
         Destroy(gameObject, DeletionTime);
         audioSource = GetComponent<AudioSource>();
@@ -31,8 +31,9 @@ public class FoodScript : MonoBehaviour
     public void Hold()
     {
         Debug.Log("picked up");
-        boxCollider.enabled = false;
+        sphereCollider.enabled = false; 
         rb.isKinematic = true;
+        Spider.enabled = false;
         GetComponent<SpriteBillboard>().enabled = false;
         audioSource.PlayOneShot(audioClips[0]);
         
@@ -49,8 +50,9 @@ public class FoodScript : MonoBehaviour
 
     public void Drop()
     {
-        boxCollider.enabled = true;
+        sphereCollider.enabled = true;
         rb.isKinematic = false;
+        Spider.enabled = true;
         GetComponent<SpriteBillboard>().enabled = true;
         audioSource.PlayOneShot(audioClips[2]);
     }
