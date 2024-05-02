@@ -1,0 +1,169 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3197913392091473266
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1825629460093991239, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_Name
+      value: MourningDove Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.47500002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.8134722
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.24420767
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.18673614
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 126.17102
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 187.42545
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3472579
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3472579
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3472579
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440621284116351275, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_text
+      value: "The mourning dove\u2019s coo almost sounds like a train whistle mixed
+        with an owl\u2019s hoot. So cool! Mourning doves migrate from Canada to Mexico
+        and mostly stay in open areas or by roadsides. When it\u2019s warm, they
+        can have up to 12 chicks per year...dang.\r\n\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440621284116351275, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440621284116351275, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198330413278860030, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 233880ee74dbe17489f2bbbc7786b100,
+        type: 3}
+    - target: {fileID: 8016921639921930040, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978509977125657566, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_text
+      value: Mourning Dove
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18d7a4ea0a47bf34faf780adbcbd00d1, type: 3}
