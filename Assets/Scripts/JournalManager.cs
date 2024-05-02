@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class JournalManager : MonoBehaviour
 {
+    //[SerializeField] AudioSource aud;
     public GameObject[] panelsToHide;
     public GameObject MainMenu;
     public GameObject Birds;
@@ -24,6 +25,7 @@ public class JournalManager : MonoBehaviour
 
     void Start()
     {
+        //aud = GetComponent<AudioSource>();
         // Iterate through each panel and set them inactive
         foreach (GameObject panel in panelsToHide)
         {
@@ -176,6 +178,7 @@ public class JournalManager : MonoBehaviour
 
     public void NextButton()
     {
+        
         //print(panelsToHide.Length);
         for (int i = 1; i < panelsToHide.Length; i++)
         {
@@ -183,7 +186,7 @@ public class JournalManager : MonoBehaviour
             {
                 if (i == panelsToHide.Length - 1)
                 {
-
+                    //aud.Play();
                     CloseCurrentPanel();
                     panelsToHide[1].SetActive(true);
                     currentPanel = panelsToHide[1];
@@ -191,6 +194,7 @@ public class JournalManager : MonoBehaviour
                 }
                 else
                 {
+                    //aud.Play();
                     CloseCurrentPanel();
                     panelsToHide[i + 1].SetActive(true);
                     currentPanel = panelsToHide[i + 1];
@@ -200,6 +204,7 @@ public class JournalManager : MonoBehaviour
 
             }
         }
+        //aud.Play();
     }
 
     public void BackButton()
@@ -211,7 +216,7 @@ public class JournalManager : MonoBehaviour
             {
                 if (i == 1)
                 {
-
+                    
                     CloseCurrentPanel();
                     panelsToHide[panelsToHide.Length - 1].SetActive(true);
                     currentPanel = panelsToHide[panelsToHide.Length - 1];
@@ -219,6 +224,7 @@ public class JournalManager : MonoBehaviour
                 }
                 else
                 {
+                    //aud.Play();
                     CloseCurrentPanel();
                     panelsToHide[i - 1].SetActive(true);
                     currentPanel = panelsToHide[i - 1];
@@ -228,5 +234,7 @@ public class JournalManager : MonoBehaviour
 
             }
         }
+
+        //aud.Play();
     }
 }
