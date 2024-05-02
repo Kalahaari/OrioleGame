@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DestroyObject : MonoBehaviour
 {
-    
-    
+
+    [SerializeField] GameObject IntroCamera;
     [SerializeField] float destroyTime;
 // Start is called before the first frame update
     
@@ -20,6 +20,9 @@ public class DestroyObject : MonoBehaviour
         
     }
 
-
+    public void Skip()
+    {
+        Destroy(IntroCamera);
+    }
 
 }
