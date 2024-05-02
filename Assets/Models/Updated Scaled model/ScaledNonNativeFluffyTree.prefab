@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 1186908555561198865}
   - component: {fileID: 4007157221472866779}
   - component: {fileID: 3979030367465490514}
+  - component: {fileID: 6852946579536250738}
   m_Layer: 0
   m_Name: FINAL_N_Tree3_maple3
   m_TagString: Untagged
@@ -135,3 +136,25 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5abcbcacb1bcff84388e900421d31ee9, type: 2}
   barkMat: {fileID: 2100000, guid: 6283203bb699a9a4bbc3a78c44571c0f, type: 2}
   swapMaterials: 1
+--- !u!64 &6852946579536250738
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3214642365971542030}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8993099439917125089, guid: 6deb610b3edba3a47a49d7be7fb9dbca, type: 3}
