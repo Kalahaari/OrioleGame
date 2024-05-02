@@ -213,8 +213,8 @@ public class JournalManager : MonoBehaviour
                 {
 
                     CloseCurrentPanel();
-                    panelsToHide[4].SetActive(true);
-                    currentPanel = panelsToHide[4];
+                    panelsToHide[panelsToHide.Length - 1].SetActive(true);
+                    currentPanel = panelsToHide[panelsToHide.Length - 1];
                     break;
                 }
                 else
