@@ -7,7 +7,9 @@ public class JournalManager : MonoBehaviour
     public GameObject Birds;
     public GameObject Birds2;
     public GameObject Birds3;
-    public GameObject Ori;
+    public GameObject Ori1;
+    public GameObject Ori2;
+    public GameObject Ori3;
     //  public GameObject Shrubs;
     public GameObject Plants;
     public GameObject Plants2;
@@ -56,7 +58,7 @@ public class JournalManager : MonoBehaviour
             }
         }
 
-        if (Birds || Plants || Food || Ori)
+        if (Birds || Plants || Food || Ori1)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -140,8 +142,20 @@ public class JournalManager : MonoBehaviour
     public void HelpOri()
     {
         CloseCurrentPanel(); // Close the current panel, if any
-        Ori.SetActive(true);
-        currentPanel = Ori; // Update the current panel reference   
+        Ori1.SetActive(true);
+        currentPanel = Ori1; // Update the current panel reference   
+    }
+    public void HelpOri2()
+    {
+        CloseCurrentPanel(); // Close the current panel, if any
+        Ori2.SetActive(true);
+        currentPanel = Ori2; // Update the current panel reference   
+    }
+    public void HelpOri3()
+    {
+        CloseCurrentPanel(); // Close the current panel, if any
+        Ori3.SetActive(true);
+        currentPanel = Ori3; // Update the current panel reference   
     }
 
     public void OpenAboutBlock()
