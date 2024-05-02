@@ -15670,22 +15670,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 4173428828332626523, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 163235cae865a9f43893b85c7b899a1c, type: 2}
     - target: {fileID: 4388483098143151740, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
         type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 4788330096370859566, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 6444972938070686590, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
     - target: {fileID: 5694458950796823398, guid: 21bf2fae43cc5844fb6bc1f6f66d4982,
         type: 3}
       propertyPath: m_Layer
@@ -20316,89 +20305,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1995952292}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1224944322
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 16.48
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -21.21
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 29.03
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: fac63cd7c09e4854baea545fd8d92453,
-        type: 3}
-      propertyPath: m_Name
-      value: BIIRDRIG_WingFlaps_GlideAnim
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fac63cd7c09e4854baea545fd8d92453, type: 3}
 --- !u!1 &1228944244
 GameObject:
   m_ObjectHideFlags: 0
@@ -47291,4 +47197,3 @@ SceneRoots:
   - {fileID: 707325201}
   - {fileID: 2117109715}
   - {fileID: 1995952292}
-  - {fileID: 1224944322}
