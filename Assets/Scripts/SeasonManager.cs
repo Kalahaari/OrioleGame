@@ -17,6 +17,7 @@ public class SeasonManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        PPArray = new GameObject[] { PP1, PP2, PP3 };
         CurrentTimer = SeasonTimer;
         instance = this;
         CurrentSeason = 1;
