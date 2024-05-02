@@ -5,10 +5,19 @@ public class JournalManager : MonoBehaviour
     public GameObject[] panelsToHide;
     public GameObject MainMenu;
     public GameObject Birds;
-    public GameObject Ori;
+    public GameObject Birds2;
+    public GameObject Birds3;
+    public GameObject Ori1;
+    public GameObject Ori2;
+    public GameObject Ori3;
     //  public GameObject Shrubs;
     public GameObject Plants;
+    public GameObject Plants2;
+    public GameObject Plants3;
+   
+
     public GameObject Food;
+    public GameObject Food2;
     [SerializeField] GameObject Journal;
 
     private GameObject currentPanel; // Track the currently active panel
@@ -49,7 +58,7 @@ public class JournalManager : MonoBehaviour
             }
         }
 
-        if (Birds || Plants || Food || Ori)
+        if (Birds || Plants || Food || Ori1)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -73,13 +82,18 @@ public class JournalManager : MonoBehaviour
         Birds.SetActive(true);
         currentPanel = Birds; // Update the current panel reference
     }
-
-    /*public void OpenTrees()
+    public void OpenBirds2()
     {
         CloseCurrentPanel(); // Close the current panel, if any
-        Trees.SetActive(true);
-        currentPanel = Trees; // Update the current panel reference
-    }*/
+        Birds2.SetActive(true);
+        currentPanel = Birds2;
+    }
+    public void OpenBirds3()
+    {
+        CloseCurrentPanel(); // Close the current panel, if any
+        Birds3.SetActive(true);
+        currentPanel = Birds3;
+    }
 
     public void OpenShrubs()
     {
@@ -96,18 +110,52 @@ public class JournalManager : MonoBehaviour
         currentPanel = Plants; // Update the current panel reference
     }
 
+    public void OpenPlants2()
+    {
+        CloseCurrentPanel(); // Close the current panel, if any
+        Plants2.SetActive(true);
+        Debug.Log("working");
+        currentPanel = Plants2; // Update the current panel reference
+    }
+    public void OpenPlants3()
+    {
+        CloseCurrentPanel(); // Close the current panel, if any
+        Plants3.SetActive(true);
+        Debug.Log("working");
+        currentPanel = Plants3; // Update the current panel reference
+    }
+ 
+
     public void OpenFood()
     {
         CloseCurrentPanel(); // Close the current panel, if any
         Food.SetActive(true);
         currentPanel = Food; // Update the current panel reference
     }
+    public void OpenFood2()
+    {
+        CloseCurrentPanel(); // Close the current panel, if any
+        Food2.SetActive(true);
+        currentPanel = Food2; // Update the current panel reference
+    }
 
     public void HelpOri()
     {
         CloseCurrentPanel(); // Close the current panel, if any
-        Ori.SetActive(true);
-        currentPanel = Ori; // Update the current panel reference   
+        Ori1.SetActive(true);
+        currentPanel = Ori1; // Update the current panel reference   
+    }
+    public void HelpOri2()
+    {
+        CloseCurrentPanel(); // Close the current panel, if any
+        Ori2.SetActive(true);
+        currentPanel = Ori2; // Update the current panel reference   
+    }
+    public void HelpOri3()
+    {
+        CloseCurrentPanel(); // Close the current panel, if any
+        Ori3.SetActive(true);
+        currentPanel = Ori3; // Update the current panel reference   
     }
 
     public void OpenAboutBlock()
@@ -133,7 +181,7 @@ public class JournalManager : MonoBehaviour
         {
             if (panelsToHide[i] == currentPanel)
             {
-                if (i == 4)
+                if (i == panelsToHide.Length - 1)
                 {
 
                     CloseCurrentPanel();

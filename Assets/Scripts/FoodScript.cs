@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FoodScript : MonoBehaviour
 {
-    [SerializeField] SpiderMovement Spider;
+    
     [SerializeField] PlayerData pd;
     [SerializeField] float DeletionTime;
     BoxCollider boxCollider;
@@ -33,7 +33,6 @@ public class FoodScript : MonoBehaviour
         Debug.Log("picked up");
         boxCollider.enabled = false;
         rb.isKinematic = true;
-        Spider.enabled = false;
         GetComponent<SpriteBillboard>().enabled = false;
         audioSource.PlayOneShot(audioClips[0]);
         
@@ -52,7 +51,6 @@ public class FoodScript : MonoBehaviour
     {
         boxCollider.enabled = true;
         rb.isKinematic = false;
-        Spider.enabled = true;
         GetComponent<SpriteBillboard>().enabled = true;
         audioSource.PlayOneShot(audioClips[2]);
     }

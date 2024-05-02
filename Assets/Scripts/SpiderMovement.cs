@@ -19,7 +19,7 @@ public class SpiderMovement : MonoBehaviour
     public void Update()
     {
         timeToChangeDirection -= Time.deltaTime;
-        rb.velocity = new Vector3(transform.forward.x * movespeed, rb.velocity.y, transform.forward.z * movespeed);
+        rb.velocity = transform.forward * movespeed;
 
         if (timeToChangeDirection <= 0)
         {

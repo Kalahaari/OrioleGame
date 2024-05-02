@@ -6,8 +6,6 @@ public class SeasonManager : MonoBehaviour
 {
     public static SeasonManager instance { get; private set; }
     public delegate void OnSeasonChange();
-    [SerializeField] GameObject PP1, PP2, PP3;
-    GameObject[] PPArray;
     public static OnSeasonChange onSeasonChange;
     [SerializeField] float SeasonTimer;
     [SerializeField] GameObject[] successScreens;
@@ -17,19 +15,16 @@ public class SeasonManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        PPArray = new GameObject[] { PP1, PP2, PP3 };
         CurrentTimer = SeasonTimer;
         instance = this;
         CurrentSeason = 1;
-        PPArray[1].SetActive(false);
-        PPArray[2].SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         CurrentTimer -= Time.deltaTime;
-        if (CurrentTimer <= 0)
+        if(CurrentTimer <= 0)
         {
             failScreens[CurrentSeason - 1].SetActive(true);
             failScreens[CurrentSeason - 1].GetComponent<CloseMe>().FreezeTime();
@@ -45,9 +40,7 @@ public class SeasonManager : MonoBehaviour
         CurrentSeason++;
         CurrentTimer = SeasonTimer;
         onSeasonChange?.Invoke();
-        //Debug.Log("timerover")
-        PPArray[seasonNumber].SetActive(true);
-        PPArray[seasonNumber - 1].SetActive(false);
+        //Debug.Log("timerover");
     }
 
 }
