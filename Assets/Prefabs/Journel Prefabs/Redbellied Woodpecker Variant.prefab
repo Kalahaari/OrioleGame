@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1166616342739329030
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1195894171271306256, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Bellied Woodpecker
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825629460093991239, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_Name
+      value: Redbellied Woodpecker Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.47500002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.8134722
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.24420767
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.18673614
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 126.17102
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 187.42545
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3472579
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3472579
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3472579
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 56.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535851218563696739, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440621284116351275, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_text
+      value: "Red-bellied woodpeckers\u2026don\u2019t really have red bellies. That's
+        disappointing. Anyways, red-bellied woodpeckers eat everything from bugs
+        to plants and live in the suburbs or city parks.\n\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440621284116351275, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440621284116351275, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198330413278860030, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ebca6a06f9192543aac789a80bce507,
+        type: 3}
+    - target: {fileID: 8016921639921930040, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8978509977125657566, guid: 18d7a4ea0a47bf34faf780adbcbd00d1,
+        type: 3}
+      propertyPath: m_text
+      value: Red Bellied Woodpecker
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18d7a4ea0a47bf34faf780adbcbd00d1, type: 3}

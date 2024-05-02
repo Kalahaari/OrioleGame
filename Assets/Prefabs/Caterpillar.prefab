@@ -98,9 +98,9 @@ GameObject:
   - component: {fileID: 528585014243150879}
   - component: {fileID: 8889314493808125806}
   - component: {fileID: 2438594660265629577}
+  - component: {fileID: 6769307600088490325}
   - component: {fileID: -5940825517737066796}
   - component: {fileID: 5766719747774659930}
-  - component: {fileID: 7304830374807080136}
   m_Layer: 0
   m_Name: Caterpillar
   m_TagString: Interactable
@@ -205,7 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6414aaee846c74284a44fabd92d955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spider: {fileID: 0}
   pd: {fileID: 11400000, guid: 77fab0ed6be934645ae35ccfd8299f65, type: 2}
   DeletionTime: 60
   audioClips:
@@ -251,6 +250,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364f635dbdc1d974db81cddc05bbe803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6769307600088490325
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8222959755480758114}
+  m_Material: {fileID: 13400000, guid: 331d35b262556a94194e0e9d8283e7c5, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &-5940825517737066796
 AudioSource:
   m_ObjectHideFlags: 0
@@ -359,24 +379,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d104b3004b7704894bc46a7612e24c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &7304830374807080136
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8222959755480758114}
-  m_Material: {fileID: 13400000, guid: 331d35b262556a94194e0e9d8283e7c5, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
