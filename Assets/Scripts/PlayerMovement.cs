@@ -161,6 +161,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(transform.up * jumpForce);
             pd.ChangeEnergy(-flapEnergy / 2);
             audioSource.Play();
+            ms.anim.Play("WingFlap1", -1, 0);
         }
     }
 
@@ -205,7 +206,8 @@ public class PlayerMovement : MonoBehaviour
     void Glide()
     {
         ChangeDrag(airDrag);
-        ms.anim.Play("Glide");
+        //if(ms.anim.)
+        //ms.anim.Play("Glide");
         ms.TrailsOn();
         
     }
@@ -216,13 +218,13 @@ public class PlayerMovement : MonoBehaviour
         
 
         ChangeDrag(groundDrag);
-        ms.anim.Play("Run");
+        ms.anim.Play("Hop");
         ms.TrailsOff();
     }
 
     void Flap()
     {
-
+        ms.anim.Play("WingFlap1");
         ms.TrailsOff();
         ChangeDrag(flapDrag);
     }
